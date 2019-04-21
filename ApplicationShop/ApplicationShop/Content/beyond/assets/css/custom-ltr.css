@@ -1,0 +1,188 @@
+﻿@font-face {
+    font-family: WYekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/assets/fonts/iransans_fanum/eot/IRANSansWeb(FaNum).eot');
+    src: url('/assets/fonts/iransans_fanum/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),url('/assets/fonts/iransans_fanum/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),url('/assets/fonts/iransans_fanum/woff/IRANSansWeb(FaNum).woff') format('woff'),url('/assets/fonts/iransans_fanum/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+}
+body ,*{    font-family: WYekan;}
+.k-rtl .k-grid-header .k-with-icon .k-link {
+    margin-right: 1.3em;
+    margin-left: 0 !important;
+}
+
+.k-rtl .k-grid-header .k-filterable .k-link {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.alertify .ajs-dimmer, .alertify .ajs-modal {
+    z-index: 99999999 !important;
+}
+
+.k-label > input[type="checkbox"], .k-label > input[type="radio"], .k-master-row td > input[type="checkbox"], .k-master-row td > input[type="radio"] {
+    cursor: pointer;
+    height: 18px;
+    opacity: 1;
+    position: relative !important;
+    right: auto !important;
+    width: 18px;
+    z-index: 12;
+}
+
+.form-horizontal .control-label {
+    font-size: 9pt;
+    text-align: left;
+    min-width: 90px !important;
+}
+
+.widget-buttons .btn {
+    margin-top: 3px !important;
+}
+
+.select2-container {
+    direction: ltr;
+}
+
+.select2-dropdown {
+    direction: ltr;
+    left: auto !important;
+    right: 0 !important;
+}
+.select2-container--default .select2-selection--multiple {
+    min-height: 34px;
+    height: auto !important;
+}
+.btn-pol-new {
+    background: #F1EBDD !important;
+    color: #0C0C0B !important;
+    border-color: #eea236 !important;
+}
+
+.btn-pol-insert {
+    background: #5cb85c !important;
+    color: #fff !important;
+    border-color: #4cae4c !important;
+}
+
+.btn-pol-edit {
+    background: #f0ad4e !important;
+    color: #fff !important;
+    border-color: #eea236;
+}
+
+.btn-pol-delete {
+    background: #c9302c !important;
+    color: #fff !important;
+    border-color: #d43f3a;
+}
+
+.btn-pol-search {
+    background: #5bc0de !important;
+    color: #fff !important;
+    border-color: #46b8da;
+}
+
+.btn-pol-expand {
+    background: #AB9DC6 !important;
+    color: #fff !important;
+    border-color: #637F58;
+}
+
+.btn-pol-collapse {
+    background: #6F2BF3 !important;
+    color: #fff !important;
+    border-color: #758B6D;
+}
+
+.btn-pol-print {
+    background: #fff !important;
+    color: #0C0C0B !important;
+    border-color: #eea236 !important;
+}
+
+.btn-pol-show {
+    background: #fff !important;
+    color: #0C0C0B !important;
+    border-color: #eea236 !important;
+}
+
+.btn-pol-cancel {
+    background: #c9302c !important;
+    color: #fff !important;
+    border-color: #d43f3a;
+}
+
+.btn-pol-operation {
+    background: #0072c6 !important;
+    color: #fff !important;
+    border-color: #0072c6;
+}
+
+.btn-pol-operation2 {
+    background: #7e3794 !important;
+    color: #fff !important;
+    border-color: #7e3794;
+}
+.select2-search--inline .select2-search__field,.select2-search select2-search--inline{
+    width: 100%!important;
+}
+.alertify-notifier *,.alertify-notifier .ajs-message {
+    color: white !important;
+}
+.k-multiselect-wrap .k-input {
+    float: right!important;
+    padding: 0.18em 0.5em!important;
+}
+.k-multiselect-wrap li{float: right!important;}.k-autocomplete .k-loading, .k-multiselect .k-loading {left: 3px!important;}
+
+
+/*******multi-level dropdown button******/
+.dropdown-menu{padding:10px;}
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #6b6969;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}

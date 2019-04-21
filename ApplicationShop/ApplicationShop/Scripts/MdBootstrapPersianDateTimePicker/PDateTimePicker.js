@@ -1,0 +1,1 @@
+﻿$(document).ready(function () { $(".PDatePicker").attr("data-mddatetimepicker", "true"); $(".PDatePicker").attr("data-placement", "bottom"); $(".PTimePicker").timepicker({ showMeridian: false, minuteStep: 5 }) });

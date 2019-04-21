@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>How to add flying images to shopping cart using jQuery - w3lessons.info - by Karthikeyan K</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery_easing.js"></script>
+<script type="text/javascript">
+
+jQuery(function($) {
+
+$('.add-to-cart').click(function() {
+	var cart = $('.shopping_bg');
+   var imgtofly = $(this).parents('li.cart_items').find('a.product-image img').eq(0);
+	if (imgtofly) {
+		var imgclone = imgtofly.clone()
+			.offset({ top:imgtofly.offset().top, left:imgtofly.offset().left })
+			.css({'opacity':'0.7', 'position':'absolute', 'height':'150px', 'width':'150px', 'z-index':'1000'})
+			.appendTo($('body'))
+			.animate({
+				'top':cart.offset().top + 10,
+				'left':cart.offset().left + 30,
+				'width':55,
+				'height':55
+			}, 1000, 'easeInElastic');
+		imgclone.animate({'width':0, 'height':0}, function(){ $(this).detach() });
+	}
+	return false;
+});
+});
+</script>
+</head>
+<style>
+.shopping_bg {
+	float:right;
+	width:60px;
+	height:60px;
+	background:url(cart.png) no-repeat center;
+	margin-right:20px;
+	padding:20px;
+}
+ul li.cart_items {
+	list-style-type:none;
+	list-style:none;
+	float:left;
+	margin-right:20px;
+}
+body {
+	background:#fafafa;
+}
+.container {
+	width: 800px;
+	border: 1px solid #C4CDE0;
+	border-radius: 2px;
+	margin: 0 auto;
+	height: 500px;
+	background:#fff;
+	padding-left:10px;
+	margin-bottom:30px;
+}
+</style>
+<body>
+<div class="container">
+<center><script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* mysite_indivi */
+google_ad_slot = "0527018651";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<h1>Flying Images to Cart using jQuery - w3lessons.info</h1>
+  <div class="shopping_bg"></div>
+  
+  <br />
+<br />
+<br />
+<br />
+
+  <ul>
+    <li class="cart_items">
+      <div class="content"> <a  href="javascript:;" class="product-image" title="Product 1" > 
+      <img class="thumbnail" src="1.jpg" alt="Product 1" /> </a> </div>
+      <button type="button" title="Add to Cart" class="add-to-cart">Add to Cart</button>
+    </li>
+        <li class="cart_items">
+      <div class="content"> <a  href="javascript:;" class="product-image" title="Product 2" > 
+      <img class="thumbnail" src="2.jpg" alt="Product 2" /> </a> </div>
+      <button type="button" title="Add to Cart" class="add-to-cart">Add to Cart</button>
+    </li>
+    
+        <li class="cart_items">
+      <div class="content"> <a  href="javascript:;" class="product-image" title="Product 3" > 
+      <img class="thumbnail" src="3.jpg" alt="Product 3" /> </a> </div>
+      <button type="button" title="Add to Cart" class="add-to-cart">Add to Cart</button>
+    </li>
+    
+        <li class="cart_items">
+      <div class="content"> <a  href="javascript:;" class="product-image" title="Product 4" > 
+      <img class="thumbnail" src="4.jpg" alt="Product 4" /> </a> </div>
+      <button type="button" title="Add to Cart" class="add-to-cart">Add to Cart</button>
+    </li>
+  </ul>
+</div>
+
+
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=itzurkarthi"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'dark', 
+    'follow' : {
+      'services' : [
+        {'service': 'facebook', 'id': 'w3lessons.info'},
+        {'service': 'twitter', 'id': 'itzurkarthi'},
+        {'service': 'linkedin', 'id': 'itzurkarthi'},
+        {'service': 'google_follow', 'id': '100211765980263169317'},
+        {'service': 'vimeo', 'id': 'itzurkarthi'},
+        {'service': 'pinterest', 'id': 'itzurkarthi'},
+        {'service': 'tumblr', 'id': 'w3lessons'},
+        {'service': 'rss', 'id': 'http://w3lessons.info/feed'}
+      ]
+    },  
+    'whatsnext' : {},  
+    'recommended' : {
+      'title': 'Recommended for you:'
+    } 
+  });
+</script>
+<!-- AddThis Smart Layers END -->
+
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:10px;top:150px;">
+<a class="addthis_button_facebook_like" fb:like:layout="box_count"></a>
+<a class="addthis_button_tweet" tw:count="vertical"></a>
+<a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+<a class="addthis_counter"></a>
+</div>
+
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* footer */
+google_ad_slot = "7568359776";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+
+</body>
+</html>

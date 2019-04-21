@@ -1,0 +1,51 @@
+﻿
+    .field-validation-error.text-danger {
+        display: block;
+        font-size: 12px;
+        width: 203px;
+    }
+
+    .margin-bottom-20 {
+        margin-bottom: 20px;
+    }
+
+    .realperson-challenge {
+        background: #eee;
+        border-right: 1px solid #ccc;
+        height: 34px;
+        left: 1px;
+        overflow: hidden;
+        padding: 5px;
+        position: absolute;
+        top: 0px;
+        width: 166px;
+        border: 1px solid #bbb;
+        border-right: 1px solid #ccc;
+        width: 50%;
+    }
+
+    .realperson-text {
+        font-family: "Courier New",monospace !important;
+        font-size: 6px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        line-height: 3px;
+        direction: ltr !important;
+        text-align: center;
+    }
+
+    .realperson-regen {
+        display: none;
+    }
+
+    #RealPersonCode {
+        text-align: center;
+        border: 1px solid #bbb;
+        width: 50%;
+    }
+
+    button[type="submit"] {
+        color: #fff;
+        background-color: #9B6BCC;
+    }
+    
