@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    @RenderSection("ContentOptimization", false)
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @Styles.Render("~/bundles/css/bootstrap")
+    @Styles.Render("~/bundles/css/bootstrap-rtl")
+    @Styles.Render("~/bundles/css/beyond-rtl")
+    <link id="skin-link" href="~/Content/beyond/assets/css/skins/darkblue.min.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/bundles/css/DateTimePicker")
+    @Styles.Render("~/bundles/css/plugins")
+    @Styles.Render("~/bundles/css/KendoDefault")
+    @Styles.Render("~/Scripts/DataTables-1.10.11/media/css/dataTables.bootstrap.min.css")
+    @RenderSection("PageCSS", false)
+    @Scripts.Render("/bundles/js/jquery")
+    @Scripts.Render("~/bundles/js/KendoDefault")
+
+    @*<script src="http://cdn.mahimart.com/Scripts/kendo/2017/kendo.aspnetmvc.min.js"></script>*@
+    <script src="~/Content/kendo.aspnetmvc.min.js"></script>
+</head>
+<body>
+    @RenderBody()
+    @Scripts.Render("~/bundles/js/bootstrap")
+    @Scripts.Render("~/bundles/js/skin")
+    @Scripts.Render("~/bundles/js/beyond")
+    @Scripts.Render("~/bundles/js/plugins")
+    @Scripts.Render("~/bundles/js/DateTimePicker")
+    @Scripts.Render("~/bundles/js/pmask")
+    @Scripts.Render("~/bundles/js/jqueryval")
+    @Scripts.Render("~/Scripts/DataTables-1.10.11/media/js/jquery.dataTables.min.js")
+    @Scripts.Render("~/Scripts/DataTables-1.10.11/media/js/dataTables.bootstrap.min.js")
+    <script src="~/Scripts/serializeJSON.js"></script>
+    @RenderSection("PageJs", false)
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/MainLayout.cshtml";
+}
+
+
+@section ContentOptimization
+{
+    @RenderSection("ContentOptimization", false)
+}
+
+
+@section PageCSS
+{
+    @RenderSection("PageCSS", false)
+}
+
+@{Html.RenderPartial("~/Views/Shared/_LoadingContainerModuleView.cshtml");}
+@{Html.RenderPartial("~/Views/Shared/_TopNavBarModuleView.cshtml");}
+<div class="main-container container-fluid">
+    <div class="page-container">
+        @{Html.RenderPartial("~/Views/Shared/_SideBarMenuSiteMapModuleView.cshtml");}
+        @*@{Html.RenderPartial("~/Views/Shared/MainAdmin/_ChatBarModuleView.cshtml");}*@
+        <div class="page-content">
+            @{Html.RenderPartial("~/Views/Shared/_Breadcrumbs.cshtml");}
+            <div class="page-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
+@section PageJs
+{
+    @RenderSection("PageJs", false)
+}

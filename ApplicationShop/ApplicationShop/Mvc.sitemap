@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+  <mvcSiteMapNode title="داشبورد" area="Admin" controller="Default" action="Index" imageUrl="glyphicon glyphicon-home" description="صفحه اصلی">
+
+
+    <mvcSiteMapNode roles="Admin" title="مدیریت اپلیکیشن ها" area="Admin" controller="Default" action="Dashboard" imageUrl="fa fa-desktop" description="مدیریت اپلیکیشن ها">
+      <mvcSiteMapNode roles="Admin" title="افزودن اپلیکیشن" area="Admin" controller="Permission" action="Permission" description="مدیریت اپلیکیشن ها"/>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode roles="Admin" title="مدیریت کاربرها" area="Admin" controller="Place" action="Dashboard" imageUrl="fa fa-desktop" description="مدیریت کاربرها">
+      <mvcSiteMapNode roles="Admin" title="لیست کاربر ها" area="Admin" controller="Place" action="Index" description="لیست کاربر ها"/>
+    </mvcSiteMapNode>
+
+  </mvcSiteMapNode>
+</mvcSiteMap>

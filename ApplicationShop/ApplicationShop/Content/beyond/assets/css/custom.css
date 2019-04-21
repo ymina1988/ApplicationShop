@@ -2,8 +2,8 @@
 font-family: WYekan;
 font-style: normal;
 font-weight: normal;
-src: url('/assets/fonts/iransans_fanum/eot/IRANSansWeb(FaNum).eot');
-src: url('/assets/fonts/iransans_fanum/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),url('/assets/fonts/iransans_fanum/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),url('/assets/fonts/iransans_fanum/woff/IRANSansWeb(FaNum).woff') format('woff'),url('/assets/fonts/iransans_fanum/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+src: url('/Content/fonts/iransans_fanum/eot/IRANSansWeb(FaNum).eot');
+src: url('/Content/fonts/iransans_fanum/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),url('/Content/fonts/iransans_fanum/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),url('/Content/fonts/iransans_fanum/woff/IRANSansWeb(FaNum).woff') format('woff'),url('/Content/fonts/iransans_fanum/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
 }
 body,.input-group-addon{font-size:12px;}
 body, * {
