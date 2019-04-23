@@ -9515,7 +9515,6 @@
     <Folder Include="Content\iDatePicker\styles\images\" />
     <Folder Include="Models\BLL\Admin\" />
     <Folder Include="Models\BLL\User\" />
-    <Folder Include="Models\Main\" />
     <Folder Include="Models\ViewModel\Admin\" />
     <Folder Include="Models\ViewModel\Main\" />
     <Folder Include="Models\ViewModel\User\" />
