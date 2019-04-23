@@ -512,6 +512,9 @@
     <Content Include="Views\Shared\_LoadingContainerModuleView.cshtml" />
     <Content Include="Views\Shared\_SideBarMenuSiteMapModuleView.cshtml" />
     <Content Include="Views\Shared\_TopNavBarModuleView.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageApps\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageApps\AddApps.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageApps\EditApps.cshtml" />
     <None Include="Content\beyond\assets\js\jqueryval\jquery.validate-vsdoc.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.min.js" />
@@ -7974,6 +7977,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageAppsController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Classes\Commands.cs" />
     <Compile Include="Classes\Convertor\DateTimeConvertor.cs" />
@@ -7999,6 +8003,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BLL\Admin\ManageAppBLL.cs" />
     <Compile Include="Models\BLL\Main\AccountBLL.cs" />
     <Compile Include="Models\DataBase\Applications.cs">
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
@@ -8039,6 +8044,7 @@
     <Compile Include="Models\DataBase\UserToRoll.cs">
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModel\Admin\ManageAppViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -9513,9 +9519,7 @@
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Content\iDatePicker\styles\images\" />
-    <Folder Include="Models\BLL\Admin\" />
     <Folder Include="Models\BLL\User\" />
-    <Folder Include="Models\ViewModel\Admin\" />
     <Folder Include="Models\ViewModel\Main\" />
     <Folder Include="Models\ViewModel\User\" />
     <Folder Include="Scripts\CustomScripts\UserScripts\" />
