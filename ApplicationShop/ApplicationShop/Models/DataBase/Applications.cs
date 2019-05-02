@@ -28,8 +28,8 @@ namespace ApplicationShop.Models.DataBase
         public string AppName { get; set; }
         public Nullable<int> Size { get; set; }
         public string Version { get; set; }
-        public string DownloadURL { get; set; }
-        public string IconeURL { get; set; }
+        public string AppURL { get; set; }
+        public string ImgURL { get; set; }
         public string Description { get; set; }
         public Nullable<bool> IsActive { get; set; }
     

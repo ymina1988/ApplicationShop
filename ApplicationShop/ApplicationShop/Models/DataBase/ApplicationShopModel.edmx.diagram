@@ -5,24 +5,24 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c586183c82ec41a7b8047fde29afe4b1" Name="Diagram1">
-        <EntityTypeShape EntityType="ApplicationShopModel.Applications" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.BookMarks" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Comments" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Downloads" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Groups" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Rolls" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ApplicationShopModel.Users" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.UserToRoll" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
-        <AssociationConnector Association="ApplicationShopModel.FK_Applications_Groups" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_Applications_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_BookMarks_Applications" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Applications" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_UserToApp_Applications" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_BookMarks_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_UserToApp_Users" ManuallyRouted="false" />
         <AssociationConnector Association="ApplicationShopModel.FK_UserToRoll_Rolls" ManuallyRouted="false" />
-        <AssociationConnector Association="ApplicationShopModel.FK_UserToRoll_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ApplicationShopModel.Applications" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="ApplicationShopModel.Users" Width="1.5" PointX="0.75" PointY="5.75" />
+        <AssociationConnector Association="ApplicationShopModel.FK_Applications_Groups" />
+        <AssociationConnector Association="ApplicationShopModel.FK_Applications_Users" />
+        <AssociationConnector Association="ApplicationShopModel.FK_BookMarks_Applications" />
+        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Applications" />
+        <AssociationConnector Association="ApplicationShopModel.FK_UserToApp_Applications" />
+        <AssociationConnector Association="ApplicationShopModel.FK_BookMarks_Users" />
+        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Users" />
+        <AssociationConnector Association="ApplicationShopModel.FK_UserToApp_Users" />
+        <AssociationConnector Association="ApplicationShopModel.FK_UserToRoll_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

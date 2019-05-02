@@ -515,6 +515,10 @@
     <Content Include="Areas\Admin\Views\ManageApps\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ManageApps\AddApps.cshtml" />
     <Content Include="Areas\Admin\Views\ManageApps\EditApps.cshtml" />
+    <Content Include="Areas\User\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\User\Views\Shared\MainUser\Menu.cshtml" />
+    <Content Include="Areas\User\Views\Shared\MasterPageUser.cshtml" />
+    <Content Include="Areas\User\Views\Default\Index.cshtml" />
     <None Include="Content\beyond\assets\js\jqueryval\jquery.validate-vsdoc.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.min.js" />
@@ -7978,6 +7982,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageAppsController.cs" />
+    <Compile Include="Areas\User\Controllers\DefaultController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Classes\Commands.cs" />
     <Compile Include="Classes\Convertor\DateTimeConvertor.cs" />
@@ -7998,6 +8003,7 @@
     <Compile Include="Classes\Replace.cs" />
     <Compile Include="Classes\Security\CheckContentImage.cs" />
     <Compile Include="Classes\Security\PasswordHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\As_AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -9505,6 +9511,13 @@
     <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\Layout\Login.cshtml" />
+    <Content Include="Views\Shared\Layout\Main.cshtml" />
+    <Content Include="Views\Shared\Layout\_Breadcrumbs.cshtml" />
+    <Content Include="Views\Shared\Layout\_Footer.cshtml" />
+    <Content Include="Views\Shared\Layout\_Header.cshtml" />
+    <Content Include="Views\Shared\Layout\_Silder.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -9515,10 +9528,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\User\Controllers\" />
     <Folder Include="Areas\User\Models\" />
-    <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Content\iDatePicker\styles\images\" />
+    <Folder Include="Content\Upload\app\" />
+    <Folder Include="Content\Upload\img\" />
     <Folder Include="Models\BLL\User\" />
     <Folder Include="Models\ViewModel\Main\" />
     <Folder Include="Models\ViewModel\User\" />

@@ -18,9 +18,15 @@ namespace ApplicationShop.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult AddApps(AddAppViewModel model,HttpPostedFile imageURL,HttpPostedFile downloadURL)
+        public ActionResult AddApps()
         {
-            var result = _manageAppBLL.Insert(model,imageURL,downloadURL);
+            return View(new AddAppViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult AddApps(AddAppViewModel model)
+        {
+            var result = _manageAppBLL.Insert(model);
             return View();
         }
 

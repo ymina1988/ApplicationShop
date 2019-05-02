@@ -1,0 +1,148 @@
+﻿@switch (@ViewData["Breadcrumbs"].ToString())
+{
+    case "Basic":
+        {
+            <div class="breadcrumbs-v4 hidden-sm hidden-xs">
+                <div class="container">
+                    <h1 class="pull-left">@ViewBag.Title</h1>
+                    <ul class="pull-right breadcrumb">
+                        <li><a href="~/"></a></li>
+                        <li><a href="@Request.Url.ToString()">صفحه</a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">@ViewBag.Title</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "Register":
+        {
+
+            <div class="breadcrumbs-v4">
+                <div style="width:100%;" id="smile">
+                    <canvas style="position: absolute; width: 100%; z-index: 3; display: block;top:0;height:100%"></canvas>
+                </div>
+                <div class="container">
+                    <span class="page-name">قوانین و مقررات</span>
+                    <h1>حساب <span class="shop-green">مشتریان</span> </h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/">صفحه اصلی</a></li>
+                        <li><a href="@Request.Url.ToString()">حساب مشتریان</a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">گذرگاه ایجاد</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "login":
+        {
+            <div class="breadcrumbs-v4">
+                <div style="width:100%;" id="smile">
+                    <canvas style="position: absolute; width: 100%; z-index: 3; display: block;top:0;height:100%"></canvas>
+                </div>
+                <div class="container">
+                    <span class="page-name">ورود به حساب کاربری</span>
+                    <h1>حساب <span class="shop-green">مشتریان</span> </h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/">صفحه اصلی</a></li>
+                        <li><a href="@Request.Url.ToString()">حساب مشتریان</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "profile":
+        {
+            <div class="breadcrumbs-v4">
+                <div style="width:100%;" id="smile">
+                    <canvas style="position: absolute; width: 100%; z-index: 3; display: block;top:0;height:100%"></canvas>
+                </div>
+                <div class="container">
+                    <span class="page-name">سوالات متداول</span>
+                    <span class="page-name">میزکار کاربران</span>
+                    <h1>@ViewBag.Title</h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/">صفحه اصلی</a></li>
+                        <li><a href="@Request.Url.ToString()">حساب مشتریان</a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">@ViewBag.CurentTitle</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "Faq":
+        {
+            <div class="breadcrumbs-v4 faq-breadcrumb margin-bottom-20">
+                <div class="container">
+                    <span class="page-name">سوالات متداول</span>
+                    <h1>آمادگی پاسخگویی به سایر سوالات شما را داریم !!!</h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/"></a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">@ViewBag.Title</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "Contact":
+        {
+            <div class="breadcrumbs-v4 hidden-sm hidden-xs">
+                <div class="container">
+                    <span class="page-name">تماس با ما</span>
+                    <h1> ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم.</h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/"></a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">@ViewBag.Title</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "Terms":
+        {
+            <div class="breadcrumbs-v4">
+                <div style="width:100%;" id="smile">
+                    <canvas style="position: absolute; width: 100%; z-index: 3; display: block;top:0;height:100%"></canvas>
+                </div>
+                <div class="container">
+                    <span class="page-name">ایجاد حساب کاربری</span>
+                    <h1>رعایت قانون اولین اصل فعالیت ما و شماست</h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/">صفحه اصلی</a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">قوانین و مقررات</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    case "About":
+        {
+            <div class="breadcrumbs-v4">
+                <div style="width:100%;" id="smile">
+                    <canvas style="position: absolute; width: 100%; z-index: 3; display: block;top:0;height:100%"></canvas>
+                </div>
+                <div class="container">
+                    <span class="page-name">درباره ی ما</span>
+                    <h1>اعتماد اولین اصل ماست</h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/">صفحه اصلی</a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">درباره ی ما</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+    default:
+        {
+            <div class="breadcrumbs-v4 hidden-sm hidden-xs">
+                <div class="container">
+                    <h1 class="pull-left">@ViewBag.Title</h1>
+                    <ul class="breadcrumb-v4-in">
+                        <li><a href="~/"></a></li>
+                        <li><a href="@Request.Url.ToString()">صفحه</a></li>
+                        <li class="active"><a href="@Request.Url.ToString()">@ViewBag.Title</a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+        break;
+}
