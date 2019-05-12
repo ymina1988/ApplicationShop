@@ -8051,6 +8051,7 @@
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModel\Admin\ManageAppViewModel.cs" />
+    <Compile Include="Models\ViewModel\Main\AccountViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -9518,6 +9519,8 @@
     <Content Include="Views\Shared\Layout\_Header.cshtml" />
     <Content Include="Views\Shared\Layout\_Silder.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\RecoveryPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -9533,7 +9536,6 @@
     <Folder Include="Content\Upload\app\" />
     <Folder Include="Content\Upload\img\" />
     <Folder Include="Models\BLL\User\" />
-    <Folder Include="Models\ViewModel\Main\" />
     <Folder Include="Models\ViewModel\User\" />
     <Folder Include="Scripts\CustomScripts\UserScripts\" />
   </ItemGroup>
