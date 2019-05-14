@@ -1,17 +1,312 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "~/Views/Shared/Layout/Main.cshtml";
+    //var GetListProduct = new BuMahi.Data.BLL.Admin.Product.ProductBLL().GetListProduct().Where(b => b.IsActive == true).ToList();
 }
 
-<!DOCTYPE html>
+@section CssPlugins
+{
+    <link href="~/Content/unify/assets/css/pages/page_search.css" rel="stylesheet" />
+    <link href="~/Content/unify/assets/css/blocks.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/owl-carousel2/assets/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>3 صفحه اصلی</title>
-</head>
-<body>
-    <div> 
+@section styles
+{
+    <link href="~/Content/css/custom-main-page.css" rel="stylesheet" />
+}
+
+<div class="search-block parallaxBg" style="background-position: 50% 16px;">
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>اپ های <span class="color-green">جدید</span> کنید</h1>
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="کلمه خود را تایپ کنید ...">
+                <span class="input-group-btn">
+                    <button class="btn-u btn-u-lg" type="button"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+
+            <form action="" class="sky-form page-search-form">
+
+            </form>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+<div class="container content-md">
+    <ul class="row block-grid-v2">
+        <li class="col-md-4 col-sm-6 md-margin-bottom-30">
+            <div class="easy-block-v1">
+                <img class="img-responsive" src="~/Content/unify/assets/img/mockup/img1.jpg" alt="">
+                <div class="easy-block-v1-badge rgba-purple">Unify Template</div>
+            </div>
+            <div class="block-grid-v2-info rounded-bottom">
+                <h3><a href="/App">One Page Template</a></h3>
+                <p>Excepturi sint occaecati cupiditate non provident, at vero eos et accusamus et iusto odio..</p>
+                <ul class="list-inline star-vote">
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star-half-o"></i></li>
+                </ul>
+            </div>
+        </li>
+        <li class="col-md-4 col-sm-6 md-margin-bottom-30">
+            <div class="easy-block-v1">
+                <img class="img-responsive" src="~/Content/unify/assets/img/mockup/img2.jpg" alt="">
+                <div class="easy-block-v1-badge rgba-blue">Graphic Design</div>
+            </div>
+            <div class="block-grid-v2-info rounded-bottom">
+                <h3><a href="/App">Mockup Design</a></h3>
+                <p>Excepturi sint occaecati cupiditate non provident, at vero eos et accusamus et iusto odio..</p>
+                <ul class="list-inline star-vote">
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star-half-o"></i></li>
+                    <li><i class="color-green fa fa-star-o"></i></li>
+                </ul>
+            </div>
+        </li>
+        <li class="col-md-4 col-sm-12">
+            <div class="easy-block-v1">
+                <img class="img-responsive" src="~/Content/unify/assets/img/mockup/img4.jpg" alt="">
+                <div class="easy-block-v1-badge rgba-red">Web Development</div>
+            </div>
+            <div class="block-grid-v2-info rounded-bottom">
+                <h3><a href="/App">HTML5/CSS3 + PHP</a></h3>
+                <p>Excepturi sint occaecati cupiditate non provident, at vero eos et accusamus et iusto odio..</p>
+                <ul class="list-inline star-vote">
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star"></i></li>
+                    <li><i class="color-green fa fa-star-o"></i></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<div class="bg-grey">
+    <div class="container content-md">
+        <h2 class="title-v2 title-center">پر بازدیدترین اپ ها</h2>
+        <ul class="row list-row margin-bottom-30">
+            <li class="col-md-4 md-margin-bottom-30">
+                <div class="content-boxes-v3 block-grid-v1 rounded">
+                    <img class="pull-left rounded-x block-grid-v1-img" src="assets/img/testimonials/img6.jpg" alt="">
+                    <div class="content-boxes-in-v3">
+                        <h3><a href="#">Forbes 1000</a></h3>
+                        <ul class="star-vote">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-half-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <ul class="list-inline margin-bottom-5">
+                            <li>By <a class="color-green" href="#">Edward Rooster</a></li>
+                            <li><i class="fa fa-clock-o"></i> Oct 07, 2014</li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                        <ul class="list-inline block-grid-v1-add-info">
+                            <li><a href="#"><i class="fa fa-eye"></i> 34039</a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i> 451</a></li>
+                            <li><a href="#"><i class="fa fa-download"></i> 10842</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> 863</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4 md-margin-bottom-30">
+                <div class="content-boxes-v3 block-grid-v1 rounded">
+                    <i class="icon-custom icon-sm rounded-x icon-bg-red fa fa-line-chart"></i>
+                    <div class="content-boxes-in-v3">
+                        <h3><a href="#">Business &amp; Finance</a></h3>
+                        <ul class="star-vote">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-half-o"></i></li>
+                        </ul>
+                        <ul class="list-inline margin-bottom-5">
+                            <li>By <a class="color-green" href="#">The Economist</a></li>
+                            <li><i class="fa fa-clock-o"></i> Oct 02, 2014</li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                        <ul class="list-inline block-grid-v1-add-info">
+                            <li><a href="#"><i class="fa fa-eye"></i> 4258</a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i> 382</a></li>
+                            <li><a href="#"><i class="fa fa-download"></i> 2938</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> 230</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="content-boxes-v3 block-grid-v1 rounded">
+                    <img class="rounded-x pull-left block-grid-v1-img" src="assets/img/testimonials/img7.jpg" alt="">
+                    <div class="content-boxes-in-v3">
+                        <h3><a href="#">Web Programming</a></h3>
+                        <ul class="star-vote">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-half-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <ul class="list-inline margin-bottom-5">
+                            <li>By <a class="color-green" href="#">Edward Rooster</a></li>
+                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                        <ul class="list-inline block-grid-v1-add-info">
+                            <li><a href="#"><i class="fa fa-eye"></i> 34039</a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i> 451</a></li>
+                            <li><a href="#"><i class="fa fa-download"></i> 10842</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> 863</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="row list-row">
+            <li class="col-md-4 md-margin-bottom-30">
+                <div class="content-boxes-v3 block-grid-v1 rounded">
+                    <i class="icon-custom icon-sm rounded-x icon-bg-blue fa fa-twitter"></i>
+                    <div class="content-boxes-in-v3">
+                        <h3><a href="#">Social Network</a></h3>
+                        <ul class="star-vote">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <ul class="list-inline margin-bottom-5">
+                            <li>By <a class="color-green" href="#">Twitter Inc.</a></li>
+                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                        <ul class="list-inline block-grid-v1-add-info">
+                            <li><a href="#"><i class="fa fa-eye"></i> 25232</a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i> 543</a></li>
+                            <li><a href="#"><i class="fa fa-download"></i> 6782</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> 943</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4 md-margin-bottom-30">
+                <div class="content-boxes-v3 block-grid-v1 rounded">
+                    <img class="rounded-x pull-left block-grid-v1-img" src="assets/img/testimonials/img2.jpg" alt="">
+                    <div class="content-boxes-in-v3">
+                        <h3><a href="#">Education/Travel</a></h3>
+                        <ul class="star-vote">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-half-o"></i></li>
+                            <li><i class="fa fa-star-o"></i></li>
+                        </ul>
+                        <ul class="list-inline margin-bottom-5">
+                            <li>By <a class="color-green" href="#">Stanford University</a></li>
+                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                        <ul class="list-inline block-grid-v1-add-info">
+                            <li><a href="#"><i class="fa fa-eye"></i> 7653</a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i> 342</a></li>
+                            <li><a href="#"><i class="fa fa-download"></i> 3621</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> 583</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="col-md-4">
+                <div class="content-boxes-v3 block-grid-v1 rounded">
+                    <i class="icon-custom icon-sm rounded-x icon-bg-purple fa fa-music"></i>
+                    <div class="content-boxes-in-v3">
+                        <h3><a href="#">Music/Films</a></h3>
+                        <ul class="star-vote">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star-half-o"></i></li>
+                        </ul>
+                        <ul class="list-inline margin-bottom-5">
+                            <li>By <a class="color-green" href="#">Sony Corporation</a></li>
+                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
+                        </ul>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                        <ul class="list-inline block-grid-v1-add-info">
+                            <li><a href="#"><i class="fa fa-eye"></i> 5263</a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i> 741</a></li>
+                            <li><a href="#"><i class="fa fa-download"></i> 21314</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> 1041</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container content">
+    <div class="heading heading-v1 margin-bottom-40">
+        <h2>همکاران</h2>
+    </div>
+    <ul class="list-inline owl-slider-v2">
+        <li class="item first-child">
+            <img src="~/Content/Pictures/Logo/pgstp-logo_name-arshia-300.png" class="owl-img-auto" alt="">
+        </li>
+        <li class="item">
+            <img src="~/Content/Pictures/Logo/Jahad-logo-LimooGraphic.png" class="owl-img-auto" alt="">
+        </li>
+        <li class="item">
+            <img src="~/Content/Pictures/Logo/Iranair-logo-LimooGraphic.png" class="owl-img-auto" alt="" />
+        </li>
+        <li class="item">
+            <img src="~/Content/Pictures/Logo/SeiroSafar.png" class="owl-img-auto" alt="">
+        </li>
+        <li class="item">
+            <img src="~/Content/Pictures/Logo/mellat.png" class="owl-img-auto" alt="">
+        </li>
+    </ul><!--/end owl-carousel-->
+</div>
+
+@section JSPlugins
+{
+    <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+}
+@section JSPageLevel
+{
+    <script src="~/Content/unify/assets/js/plugins/owl-carousel-rtl.js"></script>
+    <script src="~/Content/unify/assets/js/plugins/revolution-slider.js"></script>
+    <script src="~/Content/unify/assets/js/plugins/style-switcher-rtl.js"></script>
+    <script src="~/Content/unify/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"></script>
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/Site/ShoppingCart.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.initParallaxBg();
+            OwlCarousel.initOwlCarousel();
+            RevolutionSlider.initRSfullWidth();
+            StyleSwitcher.initStyleSwitcher();
+        });
+    </script>
+}

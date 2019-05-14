@@ -507,6 +507,12 @@
     <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\MainLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
+    <Content Include="Content\Pictures\Logo\Iranair-logo-LimooGraphic.png" />
+    <Content Include="Content\Pictures\Logo\Jahad-logo-LimooGraphic.png" />
+    <Content Include="Content\Pictures\Logo\mellat.png" />
+    <Content Include="Content\Pictures\Logo\namad.png" />
+    <Content Include="Content\Pictures\Logo\pgstp-logo_name-arshia-300.png" />
+    <Content Include="Content\Pictures\Logo\SeiroSafar.png" />
     <Content Include="Views\Shared\_Breadcrumbs.cshtml" />
     <Content Include="Views\Shared\_ChatBarModuleView.cshtml" />
     <Content Include="Views\Shared\_LoadingContainerModuleView.cshtml" />
@@ -8004,6 +8010,7 @@
     <Compile Include="Classes\Security\CheckContentImage.cs" />
     <Compile Include="Classes\Security\PasswordHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\As_AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -9521,6 +9528,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\RecoveryPassword.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
