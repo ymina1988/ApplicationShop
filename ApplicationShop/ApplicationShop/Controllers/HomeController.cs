@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApplicationShop.Models.BLL.Main;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,17 @@ namespace ApplicationShop.Controllers
 {
     public class HomeController : Controller
     {
+
+        AppBLL _appBLL = new AppBLL();
         // GET: Home
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult AppList()
+        {
+            return PartialView("/Views/Home/partial/_appList.cshtml", _appBLL.GetAppList());
         }
     }
 }

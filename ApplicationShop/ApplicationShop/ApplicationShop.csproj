@@ -8018,6 +8018,7 @@
     </Compile>
     <Compile Include="Models\BLL\Admin\ManageAppBLL.cs" />
     <Compile Include="Models\BLL\Main\AccountBLL.cs" />
+    <Compile Include="Models\BLL\Main\AppBLL.cs" />
     <Compile Include="Models\DataBase\Applications.cs">
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
     </Compile>
@@ -8059,6 +8060,7 @@
     </Compile>
     <Compile Include="Models\ViewModel\Admin\ManageAppViewModel.cs" />
     <Compile Include="Models\ViewModel\Main\AccountViewModel.cs" />
+    <Compile Include="Models\ViewModel\Main\AppVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -9529,6 +9531,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\RecoveryPassword.cshtml" />
     <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\Home\partial\_appList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
