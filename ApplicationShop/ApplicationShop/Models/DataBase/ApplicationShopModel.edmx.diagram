@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c586183c82ec41a7b8047fde29afe4b1" Name="Diagram1">
         <EntityTypeShape EntityType="ApplicationShopModel.BookMarks" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ApplicationShopModel.Comments" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Downloads" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Groups" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ApplicationShopModel.Rolls" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
@@ -17,12 +16,12 @@
         <AssociationConnector Association="ApplicationShopModel.FK_Applications_Groups" />
         <AssociationConnector Association="ApplicationShopModel.FK_Applications_Users" />
         <AssociationConnector Association="ApplicationShopModel.FK_BookMarks_Applications" />
-        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Applications" />
         <AssociationConnector Association="ApplicationShopModel.FK_UserToApp_Applications" />
         <AssociationConnector Association="ApplicationShopModel.FK_BookMarks_Users" />
-        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Users" />
         <AssociationConnector Association="ApplicationShopModel.FK_UserToApp_Users" />
         <AssociationConnector Association="ApplicationShopModel.FK_UserToRoll_Users" />
+        <EntityTypeShape EntityType="ApplicationShopModel.Comments" Width="1.5" PointX="5.25" PointY="9.375" />
+        <AssociationConnector Association="ApplicationShopModel.FK_Comments_Applications" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

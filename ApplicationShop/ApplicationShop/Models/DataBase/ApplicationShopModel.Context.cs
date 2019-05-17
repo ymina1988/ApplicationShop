@@ -26,12 +26,12 @@ namespace ApplicationShop.Models.DataBase
         }
     
         public virtual DbSet<BookMarks> BookMarks { get; set; }
-        public virtual DbSet<Comments> Comments { get; set; }
         public virtual DbSet<Downloads> Downloads { get; set; }
         public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<Rolls> Rolls { get; set; }
         public virtual DbSet<UserToRoll> UserToRoll { get; set; }
         public virtual DbSet<Applications> Applications { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Comments> Comments { get; set; }
     }
 }
