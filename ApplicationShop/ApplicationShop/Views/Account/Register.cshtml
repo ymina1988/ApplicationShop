@@ -1,0 +1,163 @@
+﻿@model ApplicationShop.Models.ViewModel.Main.RegisterVM
+
+@{
+    Layout = "~/Views/Shared/Layout/Main.cshtml";
+}
+
+
+
+@section CssPlugins{
+    <link href="~/Content/unify/assets/css/css-rtl/pages/log-reg-v3-rtl.css" rel="stylesheet" />
+
+}
+
+@section styles{
+
+    <style>
+        .sky-form .input-captcha img {
+            height: 32px;
+        }
+    </style>
+}
+
+
+
+@section ContentTop
+{
+    @{Html.RenderPartial("~/Views/Shared/Layout/_Breadcrumbs.cshtml", ViewData["Breadcrumbs"] = "Register");}
+}
+
+
+<div class="container content-xs">
+    <div class="log-reg-v3 content-md">
+        <div class="row">
+            <div class="col-md-7 md-margin-bottom-50">
+                <h2 class="welcome-title">به سایت فروشگاه اپلیککیشن ملحق شوید!</h2>
+
+                <div class="members-number">
+                    <h3>پیوستن <span class="shop-green"> هزاران </span> عضو از سراسر کشور</h3>
+                    <img class="img-responsive" src="~/assets/img/map.png" alt="" />
+                </div>
+                <div class="info-block-v2">
+                    <i class="icon icon-settings"></i>
+                    <div class="info-block-in">
+                        <h3>دسترسی آسان به حساب کاربری</h3>
+                        <p>میزکاری شما و فعالیت های  خود را مدیریت کنید و لذت ببرید!</p>
+                    </div>
+                </div>
+                <div class="info-block-v2 info-block-offset-left-20">
+                    <i class="icon icon-earphones-alt"></i>
+                    <div class="info-block-in">
+                        <h3>
+                            برای ایجاد حساب کاربریتان به راهنمایی نیاز دارید؟
+                        </h3>
+                        <p>
+                            با پشتیبان 24 ساعته ما در ارتباط باشید و سوال یا مشکل خود را مطرح نمایید تا شما را یاری کنیم.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "sky-form log-reg-block bg-grey", id = "RegisterId", enctype = "multipart/form-data" }))
+                {
+                    <h2>ایجاد حساب کاربری!</h2>
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-user"></i>
+                                @Html.TextBoxFor(model => model.Name, new { placeholder = "نام" })
+                                @Html.ValidationMessageFor(model => model.Name)
+                            </label>
+                        </div>
+                        <div class="col-sm-6">
+                            <section>
+                                <label class="input">
+                                    <i class="icon-append fa fa-user"></i>
+                                    @Html.TextBoxFor(model => model.Family, new { placeholder = "نام خانوادگی" })
+                                    @Html.ValidationMessageFor(model => model.Family)
+                                </label>
+                            </section>
+                        </div>
+                    </div>
+                    <section>
+                        <label class="input">
+                            <i class="icon-append fa fa-envelope-o"></i>
+                            @Html.TextBoxFor(model => model.Email, new { placeholder = "ایمیل" })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </label>
+                    </section>
+                    <section>
+                        <label class="input">
+                            <i class="icon-append fa fa-mobile"></i>
+                            @Html.TextBoxFor(model => model.Mobile, new { placeholder = "موبایل" })
+                            @Html.ValidationMessageFor(model => model.Mobile)
+                        </label>
+                    </section>
+                    <section>
+                        <label class="input">
+                            <i class="icon-append fa fa-key"></i>
+                            @Html.PasswordFor(model => model.Password, new { placeholder = "پسورد" })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </label>
+                    </section>
+
+                    <button class="btn-u btn-u-sea-shop btn-block margin-bottom-20 margin-top-10" type="button" onclick="Register()" id="btnregister">ایجاد حساب کاربری</button>
+                }
+                <div class="margin-bottom-20"></div>
+                <p class="text-center">شما قبلا ثبت نام کردیده اید؟ <a href="/Account/Login">ورود به حساب کاربری!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section JSPlugins
+    {
+
+}
+@section JSPageLevel
+    {
+
+}
+
+@section Scripts
+    {
+
+    <script type="text/javascript">
+        function Register() {
+            $("#RegisterId").removeData("validator");
+            $("#RegisterId").removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse("form");
+            $("#RegisterId").validate();
+
+            if ($("#RegisterId").valid()) {
+                var t = serializeJSON($('#RegisterId'));
+
+
+                $.post('@Url.Action("Register", "Account")', { model: t }, function (data) {
+                    if (parseInt(data.Status) == 1 || parseInt(data.Status) == 2 || parseInt(data.Status) == 4) {
+                        PAlert.ErrorAlert(data.Msg, 3000);
+                        PLoading.Stop(".widget");
+
+                        Refresh();
+                        return;
+                    }
+                    else {
+                        PAlert.SuccessAlert(data.Msg, 3000);
+                        PLoading.Stop(".widget");
+
+
+                        window.setTimeout(function () {
+                            window.location.href = "/User/Default";
+                        }, 1000);
+                    }
+                });
+            }
+        }
+     
+    </script>
+}

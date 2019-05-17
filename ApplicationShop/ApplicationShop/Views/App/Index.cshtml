@@ -1,0 +1,118 @@
+﻿@model ApplicationShop.Models.ViewModel.Main.AppViewModel
+
+@{
+    Layout = "~/Views/Shared/Layout/Main.cshtml";
+}
+
+@section CssPlugins
+{
+    <link href="~/Content/unify/assets/css/css-rtl/blocks-rtl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/owl-carousel2/assets/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+    <link href="~/Content/unify/assets/css/css-rtl/app-rtl.css" rel="stylesheet" />
+}
+
+@section styles
+{
+    <link href="~/Content/css/custom-main-page.css" rel="stylesheet" />
+}
+
+<div class="bg-color-light">
+    <div class="container content-sm">
+        <!-- News v3 -->
+        <div class="news-v3 margin-bottom-30">
+            <img class="img-responsive full-width" src="~/Content/unify/assets/img/main/img12.jpg" alt="">
+            <div class="news-v3-in">
+                <ul class="list-inline posted-info">
+                    <li><a href="#">@Model.GroupName</a></li>
+                    <li>25 اردیبهشت 98</li>
+                </ul>
+                <h2>@Model.AppName</h2>
+                <p>@Model.Description</p>
+
+                <ul class="post-shares post-shares-lg">
+                    <li>
+                        <a href="#">
+                            <i class="rounded-x icon-speech"></i>
+                            <span>28</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- End News v3 -->
+
+        <hr>
+
+        <h2 class="margin-bottom-20">نظرات</h2>
+
+
+        @Html.Action("GetComment", "App", new { id = Model.Id })
+
+        <hr>
+
+        <h2 class="margin-bottom-20">ارسال نظر</h2>
+        <!-- Form -->
+        <form action="/App/InsertComment" method="post" id="sky-form3" class="sky-form comment-style" novalidate="novalidate">
+            @Html.HiddenFor(b => b.Id)
+            <fieldset>
+                <div class="row sky-space-30">
+                    <div class="col-md-6">
+                        <div>
+                            <input type="text" name="name" id="name" placeholder="نام" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <input type="text" name="email" id="email" placeholder="ایمیل" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sky-space-30">
+                    <div>
+                        <textarea rows="8" name="message" id="message" placeholder="لطفا نظر خود را درج کنید" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <p><button type="submit" class="btn-u">ثبت نظر</button></p>
+            </fieldset>
+
+            <div class="message">
+                <i class="rounded-x fa fa-check"></i>
+                <p>Your comment was successfully posted!</p>
+            </div>
+        </form>
+        <!-- End Form -->
+    </div><!--/end container-->
+</div>
+
+@section JSPlugins
+{
+    <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+}
+@section JSPageLevel
+{
+    <script src="~/Content/unify/assets/js/plugins/owl-carousel-rtl.js"></script>
+    <script src="~/Content/unify/assets/js/plugins/revolution-slider.js"></script>
+    <script src="~/Content/unify/assets/js/plugins/style-switcher-rtl.js"></script>
+    <script src="~/Content/unify/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"></script>
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/Site/ShoppingCart.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.initParallaxBg();
+            OwlCarousel.initOwlCarousel();
+            RevolutionSlider.initRSfullWidth();
+            StyleSwitcher.initStyleSwitcher();
+        });
+    </script>
+}

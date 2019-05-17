@@ -14,6 +14,8 @@ namespace ApplicationShop.Models.ViewModel.Admin
     {
         public string AppName { get; set; }
         public string Description { get; set; }
+        public HttpPostedFileBase ImageURL { get; set; }
+        public HttpPostedFileBase AppFile { get; set; }
     }
 
 }

@@ -1,0 +1,35 @@
+﻿@model List<ApplicationShop.Models.ViewModel.Main.AppViewModel>
+
+<div class="container content-md">
+
+
+    @foreach (var model in from i in Model.Select((value, index) => new { value, index }) group i.value by i.index / 3 into g select g)
+    {
+
+    <ul class="row block-grid-v2">
+
+        @foreach (var item in model)
+        {
+            <li class="col-md-4 col-sm-6 md-margin-bottom-30">
+                <div class="easy-block-v1">
+                    <img class="img-responsive" src="~/Content/unify/assets/img/mockup/img1.jpg" alt="">
+                    <div class="easy-block-v1-badge rgba-purple">@item.GroupName</div>
+                </div>
+                <div class="block-grid-v2-info rounded-bottom">
+                    <h3><a href="/App?id=@item.Id">@item.AppName</a></h3>
+                    <ul class="list-inline star-vote">
+                        <li><i class="color-green fa fa-star"></i></li>
+                        <li><i class="color-green fa fa-star"></i></li>
+                        <li><i class="color-green fa fa-star"></i></li>
+                        <li><i class="color-green fa fa-star"></i></li>
+                        <li><i class="color-green fa fa-star-half-o"></i></li>
+                    </ul>
+                </div>
+            </li>
+        }
+    </ul>
+    }
+</div>
+
+
+

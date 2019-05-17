@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ApplicationShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ApplicationShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Applications">
           <Key>
             <PropertyRef Name="Id" />
@@ -15,8 +15,8 @@
           <Property Name="AppName" Type="nvarchar" MaxLength="100" />
           <Property Name="Size" Type="int" />
           <Property Name="Version" Type="nvarchar" MaxLength="50" />
-          <Property Name="DownloadURL" Type="nvarchar(max)" />
-          <Property Name="IconeURL" Type="nvarchar(max)" />
+          <Property Name="AppURL" Type="nvarchar(max)" />
+          <Property Name="ImgURL" Type="nvarchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
@@ -35,7 +35,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdApp" Type="int" Nullable="false" />
-          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="CommentText" Type="nvarchar(max)" />
           <Property Name="CreateDateTime" Type="datetime" />
           <Property Name="IsActive" Type="bit" />
@@ -69,6 +70,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" />
           <Property Name="Organization" Type="nvarchar" MaxLength="50" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
@@ -141,18 +143,6 @@
             </Principal>
             <Dependent Role="Comments">
               <PropertyRef Name="IdApp" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Comments_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Comments">
-              <PropertyRef Name="IdUser" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -233,10 +223,6 @@
             <End Role="Applications" EntitySet="Applications" />
             <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comments_Users" Association="Self.FK_Comments_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Comments" EntitySet="Comments" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserToApp_Applications" Association="Self.FK_UserToApp_Applications">
             <End Role="Applications" EntitySet="Applications" />
             <End Role="Downloads" EntitySet="Downloads" />
@@ -254,31 +240,10 @@
             <End Role="UserToRoll" EntitySet="UserToRoll" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ApplicationShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Applications">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdUser" Type="Int32" Nullable="false" />
-          <Property Name="IdGroup" Type="Int32" />
-          <Property Name="AppName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DownloadURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IconeURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="Groups" Relationship="Self.FK_Applications_Groups" FromRole="Applications" ToRole="Groups" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_Applications_Users" FromRole="Applications" ToRole="Users" />
-          <NavigationProperty Name="BookMarks" Relationship="Self.FK_BookMarks_Applications" FromRole="Applications" ToRole="BookMarks" />
-          <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Applications" FromRole="Applications" ToRole="Comments" />
-          <NavigationProperty Name="Downloads" Relationship="Self.FK_UserToApp_Applications" FromRole="Applications" ToRole="Downloads" />
-        </EntityType>
         <EntityType Name="BookMarks">
           <Key>
             <PropertyRef Name="Id" />
@@ -287,21 +252,8 @@
           <Property Name="IdApp" Type="Int32" Nullable="false" />
           <Property Name="IdUser" Type="Int32" Nullable="false" />
           <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK_BookMarks_Applications" FromRole="BookMarks" ToRole="Applications" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_BookMarks_Users" FromRole="BookMarks" ToRole="Users" />
-        </EntityType>
-        <EntityType Name="Comments">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdApp" Type="Int32" Nullable="false" />
-          <Property Name="IdUser" Type="Int32" Nullable="false" />
-          <Property Name="CommentText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
-          <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK_Comments_Applications" FromRole="Comments" ToRole="Applications" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_Comments_Users" FromRole="Comments" ToRole="Users" />
+          <NavigationProperty Name="Applications" Relationship="ApplicationShopModel.FK_BookMarks_Applications" FromRole="BookMarks" ToRole="Applications" />
+          <NavigationProperty Name="Users" Relationship="ApplicationShopModel.FK_BookMarks_Users" FromRole="BookMarks" ToRole="Users" />
         </EntityType>
         <EntityType Name="Downloads">
           <Key>
@@ -311,8 +263,8 @@
           <Property Name="IdApp" Type="Int32" Nullable="false" />
           <Property Name="IdUser" Type="Int32" Nullable="false" />
           <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK_UserToApp_Applications" FromRole="Downloads" ToRole="Applications" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_UserToApp_Users" FromRole="Downloads" ToRole="Users" />
+          <NavigationProperty Name="Applications" Relationship="ApplicationShopModel.FK_UserToApp_Applications" FromRole="Downloads" ToRole="Applications" />
+          <NavigationProperty Name="Users" Relationship="ApplicationShopModel.FK_UserToApp_Users" FromRole="Downloads" ToRole="Users" />
         </EntityType>
         <EntityType Name="Groups">
           <Key>
@@ -320,7 +272,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_Groups" FromRole="Groups" ToRole="Applications" />
+          <NavigationProperty Name="Applications" Relationship="ApplicationShopModel.FK_Applications_Groups" FromRole="Groups" ToRole="Applications" />
         </EntityType>
         <EntityType Name="Rolls">
           <Key>
@@ -330,24 +282,6 @@
           <Property Name="RollName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserToRoll" Relationship="Self.FK_UserToRoll_Rolls" FromRole="Rolls" ToRole="UserToRoll" />
         </EntityType>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Organization" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_Users" FromRole="Users" ToRole="Applications" />
-          <NavigationProperty Name="BookMarks" Relationship="Self.FK_BookMarks_Users" FromRole="Users" ToRole="BookMarks" />
-          <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Users" FromRole="Users" ToRole="Comments" />
-          <NavigationProperty Name="Downloads" Relationship="Self.FK_UserToApp_Users" FromRole="Users" ToRole="Downloads" />
-          <NavigationProperty Name="UserToRoll" Relationship="Self.FK_UserToRoll_Users" FromRole="Users" ToRole="UserToRoll" />
-        </EntityType>
         <EntityType Name="UserToRoll">
           <Key>
             <PropertyRef Name="Id" />
@@ -356,104 +290,8 @@
           <Property Name="IdUser" Type="Int32" />
           <Property Name="IdRoll" Type="Int32" />
           <NavigationProperty Name="Rolls" Relationship="Self.FK_UserToRoll_Rolls" FromRole="UserToRoll" ToRole="Rolls" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_UserToRoll_Users" FromRole="UserToRoll" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="ApplicationShopModel.FK_UserToRoll_Users" FromRole="UserToRoll" ToRole="Users" />
         </EntityType>
-        <Association Name="FK_Applications_Groups">
-          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
-          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Groups">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Applications">
-              <PropertyRef Name="IdGroup" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Applications_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Applications">
-              <PropertyRef Name="IdUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BookMarks_Applications">
-          <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
-          <End Role="BookMarks" Type="Self.BookMarks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BookMarks">
-              <PropertyRef Name="IdApp" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Comments_Applications">
-          <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
-          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Comments">
-              <PropertyRef Name="IdApp" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserToApp_Applications">
-          <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
-          <End Role="Downloads" Type="Self.Downloads" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Applications">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Downloads">
-              <PropertyRef Name="IdApp" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BookMarks_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="BookMarks" Type="Self.BookMarks" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BookMarks">
-              <PropertyRef Name="IdUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Comments_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Comments">
-              <PropertyRef Name="IdUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserToApp_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Downloads" Type="Self.Downloads" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Downloads">
-              <PropertyRef Name="IdUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserToRoll_Rolls">
           <End Role="Rolls" Type="Self.Rolls" Multiplicity="0..1" />
           <End Role="UserToRoll" Type="Self.UserToRoll" Multiplicity="*" />
@@ -466,9 +304,165 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="ApplicationShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookMarks" EntityType="Self.BookMarks" />
+          <EntitySet Name="Downloads" EntityType="Self.Downloads" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" />
+          <EntitySet Name="Rolls" EntityType="Self.Rolls" />
+          <EntitySet Name="UserToRoll" EntityType="Self.UserToRoll" />
+          <AssociationSet Name="FK_UserToRoll_Rolls" Association="Self.FK_UserToRoll_Rolls">
+            <End Role="Rolls" EntitySet="Rolls" />
+            <End Role="UserToRoll" EntitySet="UserToRoll" />
+          </AssociationSet>
+          <EntitySet Name="Applications" EntityType="ApplicationShopModel.Applications" />
+          <EntitySet Name="Users" EntityType="ApplicationShopModel.Users" />
+          <AssociationSet Name="FK_Applications_Groups" Association="ApplicationShopModel.FK_Applications_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Applications_Users" Association="ApplicationShopModel.FK_Applications_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookMarks_Applications" Association="ApplicationShopModel.FK_BookMarks_Applications">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="BookMarks" EntitySet="BookMarks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserToApp_Applications" Association="ApplicationShopModel.FK_UserToApp_Applications">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Downloads" EntitySet="Downloads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookMarks_Users" Association="ApplicationShopModel.FK_BookMarks_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BookMarks" EntitySet="BookMarks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserToApp_Users" Association="ApplicationShopModel.FK_UserToApp_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Downloads" EntitySet="Downloads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserToRoll_Users" Association="ApplicationShopModel.FK_UserToRoll_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserToRoll" EntitySet="UserToRoll" />
+          </AssociationSet>
+          <EntitySet Name="Comments" EntityType="ApplicationShopModel.Comments" />
+          <AssociationSet Name="FK_Comments_Applications" Association="ApplicationShopModel.FK_Comments_Applications">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdGroup" Type="Int32" />
+          <Property Name="AppName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AppURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImgURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Groups" Relationship="ApplicationShopModel.FK_Applications_Groups" FromRole="Applications" ToRole="Groups" />
+          <NavigationProperty Name="Users" Relationship="ApplicationShopModel.FK_Applications_Users" FromRole="Applications" ToRole="Users" />
+          <NavigationProperty Name="BookMarks" Relationship="ApplicationShopModel.FK_BookMarks_Applications" FromRole="Applications" ToRole="BookMarks" />
+          <NavigationProperty Name="Downloads" Relationship="ApplicationShopModel.FK_UserToApp_Applications" FromRole="Applications" ToRole="Downloads" />
+          <NavigationProperty Name="Comments" Relationship="ApplicationShopModel.FK_Comments_Applications" FromRole="Applications" ToRole="Comments" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Organization" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Applications" Relationship="ApplicationShopModel.FK_Applications_Users" FromRole="Users" ToRole="Applications" />
+          <NavigationProperty Name="BookMarks" Relationship="ApplicationShopModel.FK_BookMarks_Users" FromRole="Users" ToRole="BookMarks" />
+          <NavigationProperty Name="Downloads" Relationship="ApplicationShopModel.FK_UserToApp_Users" FromRole="Users" ToRole="Downloads" />
+          <NavigationProperty Name="UserToRoll" Relationship="ApplicationShopModel.FK_UserToRoll_Users" FromRole="Users" ToRole="UserToRoll" />
+        </EntityType>
+        <Association Name="FK_Applications_Groups">
+          <End Type="ApplicationShopModel.Groups" Role="Groups" Multiplicity="0..1" />
+          <End Type="ApplicationShopModel.Applications" Role="Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Applications_Users">
+          <End Type="ApplicationShopModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="ApplicationShopModel.Applications" Role="Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookMarks_Applications">
+          <End Type="ApplicationShopModel.Applications" Role="Applications" Multiplicity="1" />
+          <End Type="ApplicationShopModel.BookMarks" Role="BookMarks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookMarks">
+              <PropertyRef Name="IdApp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserToApp_Applications">
+          <End Type="ApplicationShopModel.Applications" Role="Applications" Multiplicity="1" />
+          <End Type="ApplicationShopModel.Downloads" Role="Downloads" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Downloads">
+              <PropertyRef Name="IdApp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookMarks_Users">
+          <End Type="ApplicationShopModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="ApplicationShopModel.BookMarks" Role="BookMarks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BookMarks">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserToApp_Users">
+          <End Type="ApplicationShopModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="ApplicationShopModel.Downloads" Role="Downloads" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Downloads">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserToRoll_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="UserToRoll" Type="Self.UserToRoll" Multiplicity="*" />
+          <End Type="ApplicationShopModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="ApplicationShopModel.UserToRoll" Role="UserToRoll" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -478,78 +472,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ApplicationShopEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Applications" EntityType="Self.Applications" />
-          <EntitySet Name="BookMarks" EntityType="Self.BookMarks" />
-          <EntitySet Name="Comments" EntityType="Self.Comments" />
-          <EntitySet Name="Downloads" EntityType="Self.Downloads" />
-          <EntitySet Name="Groups" EntityType="Self.Groups" />
-          <EntitySet Name="Rolls" EntityType="Self.Rolls" />
-          <EntitySet Name="Users" EntityType="Self.Users" />
-          <EntitySet Name="UserToRoll" EntityType="Self.UserToRoll" />
-          <AssociationSet Name="FK_Applications_Groups" Association="Self.FK_Applications_Groups">
-            <End Role="Groups" EntitySet="Groups" />
-            <End Role="Applications" EntitySet="Applications" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Applications_Users" Association="Self.FK_Applications_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Applications" EntitySet="Applications" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BookMarks_Applications" Association="Self.FK_BookMarks_Applications">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="BookMarks" EntitySet="BookMarks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Comments_Applications" Association="Self.FK_Comments_Applications">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Comments" EntitySet="Comments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserToApp_Applications" Association="Self.FK_UserToApp_Applications">
-            <End Role="Applications" EntitySet="Applications" />
-            <End Role="Downloads" EntitySet="Downloads" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BookMarks_Users" Association="Self.FK_BookMarks_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="BookMarks" EntitySet="BookMarks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Comments_Users" Association="Self.FK_Comments_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Comments" EntitySet="Comments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserToApp_Users" Association="Self.FK_UserToApp_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Downloads" EntitySet="Downloads" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserToRoll_Rolls" Association="Self.FK_UserToRoll_Rolls">
-            <End Role="Rolls" EntitySet="Rolls" />
-            <End Role="UserToRoll" EntitySet="UserToRoll" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserToRoll_Users" Association="Self.FK_UserToRoll_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="UserToRoll" EntitySet="UserToRoll" />
-          </AssociationSet>
-        </EntityContainer>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdApp" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CommentText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Applications" Relationship="ApplicationShopModel.FK_Comments_Applications" FromRole="Comments" ToRole="Applications" />
+        </EntityType>
+        <Association Name="FK_Comments_Applications">
+          <End Type="ApplicationShopModel.Applications" Role="Applications" Multiplicity="1" />
+          <End Type="ApplicationShopModel.Comments" Role="Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="IdApp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ApplicationShopModelStoreContainer" CdmEntityContainer="ApplicationShopEntities">
-          <EntitySetMapping Name="Applications">
-            <EntityTypeMapping TypeName="ApplicationShopModel.Applications">
-              <MappingFragment StoreEntitySet="Applications">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
-                <ScalarProperty Name="AppName" ColumnName="AppName" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Version" ColumnName="Version" />
-                <ScalarProperty Name="DownloadURL" ColumnName="DownloadURL" />
-                <ScalarProperty Name="IconeURL" ColumnName="IconeURL" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BookMarks">
             <EntityTypeMapping TypeName="ApplicationShopModel.BookMarks">
               <MappingFragment StoreEntitySet="BookMarks">
@@ -557,18 +510,6 @@
                 <ScalarProperty Name="IdApp" ColumnName="IdApp" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Comments">
-            <EntityTypeMapping TypeName="ApplicationShopModel.Comments">
-              <MappingFragment StoreEntitySet="Comments">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdApp" ColumnName="IdApp" />
-                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-                <ScalarProperty Name="CommentText" ColumnName="CommentText" />
-                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -598,26 +539,56 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="ApplicationShopModel.Users">
-              <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Organization" ColumnName="Organization" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="UserToRoll">
             <EntityTypeMapping TypeName="ApplicationShopModel.UserToRoll">
               <MappingFragment StoreEntitySet="UserToRoll">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="IdRoll" ColumnName="IdRoll" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="ApplicationShopModel.Applications">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImgURL" ColumnName="ImgURL" />
+                <ScalarProperty Name="AppURL" ColumnName="AppURL" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="AppName" ColumnName="AppName" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ApplicationShopModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="ApplicationShopModel.Comments">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="CommentText" ColumnName="CommentText" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="IdApp" ColumnName="IdApp" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

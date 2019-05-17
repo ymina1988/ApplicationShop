@@ -134,69 +134,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\ApplicationShop.dll" />
-    <Content Include="bin\ApplicationShop.pdb" />
-    <Content Include="bin\BeyondThemes.Bootstrap.dll" />
-    <Content Include="bin\BundleTransformer.Core.dll" />
-    <Content Include="bin\EntityFramework.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
-    <Content Include="bin\Kendo.Mvc.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\Microsoft.Web.Administration.dll" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\MvcSiteMapProvider.dll" />
-    <Content Include="bin\MvcSiteMapProvider.WebActivator.dll" />
-    <Content Include="bin\MvcSiteMapProvider.WebActivator.pdb" />
-    <Content Include="bin\MvcSiteMapProvider.WebActivator.xml" />
-    <Content Include="bin\MvcSiteMapProvider.xml" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\Ninject.dll" />
-    <Content Include="bin\Ninject.pdb" />
-    <Content Include="bin\Ninject.xml" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\csi.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="bin\roslyn\System.AppContext.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Net.Http.Formatting.dll" />
-    <Content Include="bin\System.Net.Http.Formatting.xml" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
-    <Content Include="bin\System.Web.Http.dll" />
-    <Content Include="bin\System.Web.Http.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\WebActivatorEx.dll" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\beyond\assets\css\4095-rtl.css" />
     <Content Include="Content\beyond\assets\css\4095-rtl.min.css" />
     <Content Include="Content\beyond\assets\css\4095.css" />
@@ -570,6 +507,12 @@
     <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\MainLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
+    <Content Include="Content\Pictures\Logo\Iranair-logo-LimooGraphic.png" />
+    <Content Include="Content\Pictures\Logo\Jahad-logo-LimooGraphic.png" />
+    <Content Include="Content\Pictures\Logo\mellat.png" />
+    <Content Include="Content\Pictures\Logo\namad.png" />
+    <Content Include="Content\Pictures\Logo\pgstp-logo_name-arshia-300.png" />
+    <Content Include="Content\Pictures\Logo\SeiroSafar.png" />
     <Content Include="Views\Shared\_Breadcrumbs.cshtml" />
     <Content Include="Views\Shared\_ChatBarModuleView.cshtml" />
     <Content Include="Views\Shared\_LoadingContainerModuleView.cshtml" />
@@ -578,15 +521,10 @@
     <Content Include="Areas\Admin\Views\ManageApps\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ManageApps\AddApps.cshtml" />
     <Content Include="Areas\Admin\Views\ManageApps\EditApps.cshtml" />
-    <Content Include="bin\ApplicationShop.dll.config" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Areas\User\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\User\Views\Shared\MainUser\Menu.cshtml" />
+    <Content Include="Areas\User\Views\Shared\MasterPageUser.cshtml" />
+    <Content Include="Areas\User\Views\Default\Index.cshtml" />
     <None Include="Content\beyond\assets\js\jqueryval\jquery.validate-vsdoc.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.min.js" />
@@ -8050,6 +7988,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageAppsController.cs" />
+    <Compile Include="Areas\User\Controllers\DefaultController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Classes\Commands.cs" />
     <Compile Include="Classes\Convertor\DateTimeConvertor.cs" />
@@ -8070,6 +8009,8 @@
     <Compile Include="Classes\Replace.cs" />
     <Compile Include="Classes\Security\CheckContentImage.cs" />
     <Compile Include="Classes\Security\PasswordHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\As_AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -8077,6 +8018,8 @@
     </Compile>
     <Compile Include="Models\BLL\Admin\ManageAppBLL.cs" />
     <Compile Include="Models\BLL\Main\AccountBLL.cs" />
+    <Compile Include="Models\BLL\Main\AppBLL.cs" />
+    <Compile Include="Models\BLL\Main\CommentBLL.cs" />
     <Compile Include="Models\DataBase\Applications.cs">
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
     </Compile>
@@ -8117,6 +8060,9 @@
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModel\Admin\ManageAppViewModel.cs" />
+    <Compile Include="Models\ViewModel\Main\AccountViewModel.cs" />
+    <Compile Include="Models\ViewModel\Main\AppVM.cs" />
+    <Compile Include="Models\ViewModel\Main\CommentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -9577,6 +9523,18 @@
     <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\Layout\Login.cshtml" />
+    <Content Include="Views\Shared\Layout\Main.cshtml" />
+    <Content Include="Views\Shared\Layout\_Breadcrumbs.cshtml" />
+    <Content Include="Views\Shared\Layout\_Footer.cshtml" />
+    <Content Include="Views\Shared\Layout\_Header.cshtml" />
+    <Content Include="Views\Shared\Layout\_Silder.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\RecoveryPassword.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\Home\partial\_appList.cshtml" />
+    <Content Include="Views\App\partial\_commentList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -9587,12 +9545,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\User\Controllers\" />
     <Folder Include="Areas\User\Models\" />
-    <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Content\iDatePicker\styles\images\" />
+    <Folder Include="Content\Upload\app\" />
+    <Folder Include="Content\Upload\img\" />
     <Folder Include="Models\BLL\User\" />
-    <Folder Include="Models\ViewModel\Main\" />
     <Folder Include="Models\ViewModel\User\" />
     <Folder Include="Scripts\CustomScripts\UserScripts\" />
   </ItemGroup>

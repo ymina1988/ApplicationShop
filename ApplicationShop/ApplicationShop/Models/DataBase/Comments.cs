@@ -16,12 +16,12 @@ namespace ApplicationShop.Models.DataBase
     {
         public int Id { get; set; }
         public int IdApp { get; set; }
-        public int IdUser { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
         public string CommentText { get; set; }
         public Nullable<System.DateTime> CreateDateTime { get; set; }
         public Nullable<bool> IsActive { get; set; }
     
         public virtual Applications Applications { get; set; }
-        public virtual Users Users { get; set; }
     }
 }

@@ -1,0 +1,22 @@
+﻿@model List<ApplicationShop.Models.ViewModel.Main.CommentViewModel>
+
+
+@foreach (var item in Model)
+{
+    <!-- Blog Comments -->
+    <div class="row blog-comments margin-bottom-30">
+        <div class="col-sm-2 sm-margin-bottom-40">
+            <img src="~/Content/unify/assets/img/team/img1-sm.jpg" alt="">
+        </div>
+        <div class="col-sm-10">
+            <div class="comments-itself">
+                <h4>
+                  @item.name (@item.email)
+                </h4>
+                <p>@item.message</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Comments -->
+}
+

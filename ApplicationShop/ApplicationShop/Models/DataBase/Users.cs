@@ -19,13 +19,13 @@ namespace ApplicationShop.Models.DataBase
         {
             this.Applications = new HashSet<Applications>();
             this.BookMarks = new HashSet<BookMarks>();
-            this.Comments = new HashSet<Comments>();
             this.Downloads = new HashSet<Downloads>();
             this.UserToRoll = new HashSet<UserToRoll>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Family { get; set; }
         public string Organization { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -37,8 +37,6 @@ namespace ApplicationShop.Models.DataBase
         public virtual ICollection<Applications> Applications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookMarks> BookMarks { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comments> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Downloads> Downloads { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
