@@ -7,7 +7,7 @@
 
 
     <mvcSiteMapNode roles="Admin" title="مدیریت اپلیکیشن ها" area="Admin" controller="Default" action="Dashboard" imageUrl="fa fa-desktop" description="مدیریت اپلیکیشن ها">
-      <mvcSiteMapNode roles="Admin" title="افزودن اپلیکیشن" area="Admin" controller="Permission" action="Permission" description="مدیریت اپلیکیشن ها"/>
+      <mvcSiteMapNode roles="Admin" title="افزودن اپلیکیشن" area="Admin" controller="ManageApps" action="AddApps" description="افزودن اپلیکیشن ها"/>
     </mvcSiteMapNode>
 
 
