@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using ApplicationShop.Models.ViewModel.Admin;
 using System.IO;
+using ApplicationShop.Models.ViewModel.Main;
 
 namespace ApplicationShop.Models.BLL.Admin
 {
@@ -66,6 +67,34 @@ namespace ApplicationShop.Models.BLL.Admin
                     return 0;
                 }
 
+            }
+        }
+
+        public List<AppViewModel> GetAppList()
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var result = _Db.Applications.Select(v => new AppViewModel()
+                {
+                    Id = v.Id,
+                    AppName = v.AppName,
+                    AppUrl = v.AppURL,
+                    ImgUrl = v.ImgURL,
+                    GroupName = v.Groups.GroupName,
+                    Description = v.Description
+                }).ToList();
+
+                return result;
+            }
+        }
+
+        public int ChangeStatus(int Id)
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var t = _Db.Applications.FirstOrDefault(b => b.Id == Id);
+                t.IsActive = !t.IsActive;
+                return _Db.SaveChanges() + 1;
             }
         }
     }
