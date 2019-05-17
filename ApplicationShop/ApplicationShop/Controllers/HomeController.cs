@@ -19,7 +19,8 @@ namespace ApplicationShop.Controllers
 
         public ActionResult AppList()
         {
-            return PartialView("/Views/Home/partial/_appList.cshtml", _appBLL.GetAppList());
+            var result = _appBLL.GetAppList();
+            return PartialView("/Views/Home/partial/_appList.cshtml", result);
         }
     }
 }

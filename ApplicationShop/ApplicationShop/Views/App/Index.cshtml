@@ -22,8 +22,29 @@
 <div class="bg-color-light">
     <div class="container content-sm">
         <!-- News v3 -->
+
         <div class="news-v3 margin-bottom-30">
-            <img class="img-responsive full-width" src="~/Content/unify/assets/img/main/img12.jpg" alt="">
+            <div class="row">
+                <div class="col-md-8">
+                    <img class="img-responsive full-width" src="~/Content/Upload/img/@Model.ImgUrl" alt="">
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-offset-5">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="btn btn-success btn-u-lg" href="~/Content/Upload/app/@Model.AppUrl"><i class="fa fa-download"></i> دانلود اپ</a>
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning fade in">
+                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                <strong>هشدار!</strong> جهت دانلود لطفا لاگین کنید
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
             <div class="news-v3-in">
                 <ul class="list-inline posted-info">
                     <li><a href="#">@Model.GroupName</a></li>

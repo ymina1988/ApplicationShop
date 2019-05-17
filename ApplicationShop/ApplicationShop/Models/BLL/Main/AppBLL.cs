@@ -19,6 +19,7 @@ namespace ApplicationShop.Models.BLL.Main
                     Id = v.Id,
                     AppName = v.AppName,
                     AppUrl = v.AppURL,
+                    ImgUrl = v.ImgURL,
                     GroupName = v.Groups.GroupName,
                     Description = v.Description
                 }).ToList();
@@ -35,6 +36,7 @@ namespace ApplicationShop.Models.BLL.Main
                     Id = v.Id,
                     AppName = v.AppName,
                     AppUrl = v.AppURL,
+                    ImgUrl = v.ImgURL,
                     GroupName = v.Groups.GroupName,
                     Description = v.Description
                 }).FirstOrDefault();

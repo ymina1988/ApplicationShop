@@ -1,4 +1,10 @@
 ﻿
+
+@{
+    ApplicationShop.Models.BLL.Main.IMainSite _IMainSite;
+    _IMainSite = new ApplicationShop.Models.BLL.Main.MainSiteBLL();
+}
+
 <style>
     .btn-register {
         background: #5cac19 !important;
@@ -23,6 +29,7 @@
         padding: 4px 10px;
         font-family: IranSans;
     }
+
     .btn-logout {
         background: #c0392b !important;
         -webkit-background: #009cde !important;
@@ -34,6 +41,7 @@
         padding: 4px 10px;
         font-family: IranSans;
     }
+
     .btn-dashboard {
         background: #009cde !important;
         -webkit-background: #009cde !important;
@@ -60,9 +68,22 @@
 
                 <div class="col-sm-6">
 
-                            <ul class="list-inline right-topbar">
-                               <li><a href="/Account/Register" class="btn btn-register no-padding"><i class="fa fa-lock"></i> ثبت نام </a>  <a href="/Account/Login" class="btn btn-login no-padding"><i class="fa fa-user"></i> ورود به سایت</a></li>
-                             </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        var GetItm = _IMainSite.GetMainSiteHomeLogin(Int32.Parse(User.Identity.Name));
+                        if (_IMainSite.IsUser(Int32.Parse(User.Identity.Name)))
+                        {
+                            <span class="label label-sea"><i class="fa fa-user"></i> @GetItm.FullName خوش آمدید</span>
+                            <a href="~/User" class="btn btn-dashboard no-padding"><i class="fa fa-tachometer"></i> داشبورد کاربری</a>
+                            <a href="/Account/SignOut" class="btn btn-logout no-padding"><i class="fa fa-sign-out"></i> خروج از سایت</a>
+                        }
+                    }
+                    else
+                    {
+                        <ul class="list-inline right-topbar">
+                            <li><a href="/Account/Register" class="btn btn-register no-padding"><i class="fa fa-lock"></i> ثبت نام </a>  <a href="/Account/Login" class="btn btn-login no-padding"><i class="fa fa-user"></i> ورود به سایت</a></li>
+                        </ul>
+                    }
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-inline right-topbar pull-right">

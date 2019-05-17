@@ -8020,6 +8020,8 @@
     <Compile Include="Models\BLL\Main\AccountBLL.cs" />
     <Compile Include="Models\BLL\Main\AppBLL.cs" />
     <Compile Include="Models\BLL\Main\CommentBLL.cs" />
+    <Compile Include="Models\ViewModel\Main\MainSite.cs" />
+    <Compile Include="Models\BLL\Main\MainSiteBLL.cs" />
     <Compile Include="Models\DataBase\Applications.cs">
       <DependentUpon>ApplicationShopModel.tt</DependentUpon>
     </Compile>

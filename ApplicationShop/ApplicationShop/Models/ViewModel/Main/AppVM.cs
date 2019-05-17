@@ -12,6 +12,8 @@ namespace ApplicationShop.Models.ViewModel.Main
         public string GroupName { get; set; }
         
         public string AppUrl { get; set; }
+
+        public string ImgUrl { get; set; }
         public string Description { get; set; }
     }
 }
