@@ -1,9 +1,116 @@
 ﻿
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+<div class="row">
+    <div class="widget">
+        <div class="widget-header bBloged-bottom bBloged-blue">
+            <span class="widget-caption">مدیریت اپ</span>
+        </div>
+        <div class="widget-body k-rtl">
+            <a href='/Admin/ManageApps/AddApps' class='btn btn-success'><i class="fa fa-plus"></i>افزودن </a>
+            <div id="Applist"></div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var dataSource = new kendo.data.DataSource({
+                transport:
+                {
+                    read: {
+                        url: '@Url.Action("GetAppList", "ManageApps", new { Area = "Admin" })',
+                        dataType: "json",
+                        type: "POST"
+                        }
+                    },
+                    batch: true,
+                    pageSize: 50,
+                    schema:
+                    {
+                        model:
+                        {
+                            id: "Id",
+                            fields:
+                            {
+                                Id: { validation: { required: false } },
+                                AppName: { validation: { required: false } },
+                                AppUrl: { validation: { required: false } },
+                                ImgUrl: { validation: { required: false } },
+                                GroupName: { validation: { required: false } },
+                                Description: { validation: { required: false } },
+                            }
+                        }
+                    }
+                });
+
+            $("#Applist").kendoGrid({
+                dataSource: dataSource,
+                pageable: true,
+                height: 600,
+                filterable: true,
+                groupable: true,
+                sortable: true,
+                height: 500,
+                columns: [
+                    { field: "AppName", title: "نام اپ", width: "120px" },
+                    { field: "GroupName", title: "تگ", width: "100px" },
+                    { field: "Description", title: "تاریخ مطلب", width: "80px" },
+                    { field: "AppUrl", title: "عنوان", width: "200px" },
+                    { field: "ImgUrl", title: "بازدید", width: "50px" },
+                    { title: "وضعیت", width: "140px", template: "<a onclick='ChangeStatusBlog(#=Id#)' class='btn btn-warning' href='javascript:void(0);'><i class='fa fa-warning right'></i> فعال/غیرفعال</a> <a target='_blank' href='/Admin/Blog/Blog_Update_Insert/#=Id#' class='btn btn-info' href='javascript:void(0);'><i class='fa fa-warning right'></i> ویرایش</a>" }
+                ],
+                noRecords: {
+                    template: "<h1 class='NoRecordFound'><b>موردی یافت نشد...!</b></h1>"
+                }
+            });
+        });
+
+        function ChangeStatusBlog(Id)
+        {
+            $.confirm({
+                    icon: 'fa fa-danger',
+                    type: 'red',
+                    title: ' پیام سیستم ',
+                    content: 'آیا از ثبت مورد انتخابی اطمینان دارید؟' +
+                    '<br/>' + 'Enter = OK' + '&nbsp; &nbsp;' + 'ESC = Cancle',
+                    closeIcon: true,
+                    rtl: true,
+                    buttons: {
+                        ok: {
+                            text: 'تاييد',
+                            keys: ['enter'],
+                            btnClass: 'btn-danger',
+                            action: function () {
+
+            $.post('@Url.Action("ChangeStatus", "ManageApps", new { Area = "Admin" })', { Id: Id }, function (data)
+            {
+                if (parseInt(data) > 0)
+                {
+                    PAlert.SuccessAlert('اطلاعات با موفقیت ثبت شد', 3000);
+                    $('#DivReadBlog').data('kendoGrid').dataSource.read();
+                    $('#DivReadBlog').data('kendoGrid').refresh();
+                }
+                else {
+                    PAlert.ErrorAlert('خطا در ثبت اطلاعات', 3000);
+                    PLoading.Stop(".widget");
+                }
+            });
+                        }
+                    },
+                    cancel: {
+                        text: 'انصراف',
+                        keys: ['esc'],
+                        action: function ()
+                        {
+                            PLoading.Stop(".widget");
+                        }
+                    }
+                }
+            });
+        }
+
+    </script>
 }
-
-<h2>apps</h2>
-

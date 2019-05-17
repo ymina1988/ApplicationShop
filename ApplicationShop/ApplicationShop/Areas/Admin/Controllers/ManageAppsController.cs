@@ -18,6 +18,12 @@ namespace ApplicationShop.Areas.Admin.Controllers
             return View();
         }
 
+        [HttpPost]
+        public JsonResult GetAppList()
+        {
+            return Json(_manageAppBLL.GetAppList(), JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult AddApps()
         {
             return View(new AddAppViewModel());
@@ -33,6 +39,11 @@ namespace ApplicationShop.Areas.Admin.Controllers
         public ActionResult EditApps()
         {
             return View();
+        }
+
+        public int ChangeStatus(int Id)
+        {
+            return _manageAppBLL.ChangeStatus(Id);
         }
     }
 }

@@ -202,13 +202,13 @@ namespace ApplicationShop
             //---------- Kendo CSS ---------------
             var KendoStylesBundle = new Bundle("~/bundles/css/KendoDefault");
             KendoStylesBundle.Include(
-                    "~/Content/kendo/2017/kendo.rtl.min.css",
-                    "~/Content/kendo/2017/kendo.common.min.css",                    
-                    "~/Content/kendo/2017/kendo.mobile.all.min.css",
-                    "~/Content/kendo/2017/kendo.dataviz.metro.min.css",
-                    "~/Content/kendo/2017/kendo.metro.min.css",
-                    "~/Content/kendo/2017/kendo.dataviz.default.min.css",
-                    "~/Content/kendo/2017/kendo.default.min.css");
+                    "~/Scripts/kendo/2017/kendo.rtl.min.css",
+                    "~/Scripts/kendo/2017/kendo.common.min.css",                    
+                    "~/Scripts/kendo/2017/kendo.mobile.all.min.css",
+                    "~/Scripts/kendo/2017/kendo.dataviz.metro.min.css",
+                    "~/Scripts/kendo/2017/kendo.metro.min.css",
+                    "~/Scripts/kendo/2017/kendo.dataviz.default.min.css",
+                    "~/Scripts/kendo/2017/kendo.default.min.css");
             KendoStylesBundle.Builder = nullBuilder;
             KendoStylesBundle.Transforms.Add(styleTransformer);
             KendoStylesBundle.Orderer = nullOrderer;
