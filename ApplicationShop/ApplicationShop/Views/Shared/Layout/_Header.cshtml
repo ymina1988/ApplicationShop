@@ -74,7 +74,7 @@
                         if (_IMainSite.IsUser(Int32.Parse(User.Identity.Name)))
                         {
                             <span class="label label-sea"><i class="fa fa-user"></i> @GetItm.FullName خوش آمدید</span>
-                            <a href="~/User" class="btn btn-dashboard no-padding"><i class="fa fa-tachometer"></i> داشبورد کاربری</a>
+                            <a href="~/User/Default" class="btn btn-dashboard no-padding"><i class="fa fa-tachometer"></i> داشبورد کاربری</a>
                             <a href="/Account/SignOut" class="btn btn-logout no-padding"><i class="fa fa-sign-out"></i> خروج از سایت</a>
                         }
                     }
@@ -106,7 +106,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <img id="logo-header" src="/assets/img/logo.png" alt="Logo" style="width: 240px; height: 60px;">
+ 
+                    <img id="logo-header" src="~/Content/Pictures/Logo/logo.png" alt="Logo" style="width: 240px; height: 60px;">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
