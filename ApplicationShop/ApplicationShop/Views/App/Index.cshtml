@@ -17,19 +17,107 @@
 @section styles
 {
     <link href="~/Content/css/custom-main-page.css" rel="stylesheet" />
-}
+    <style>
 
+        span{
+            color:black
+        }
+    </style>
+}
 <div class="bg-color-light">
     <div class="container content-sm">
         <!-- News v3 -->
+        @*mina*@
+        <div class="row margin-top-md ">
+            <div class="col-sm-2">
+                <img class="img-responsive full-width" src="~/Content/Upload/img/@Model.ImgUrl" alt="">
+            </div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-12 center-xs">
+                        <div class="app-name">
+                            <h1>
+                                @Model.AppName
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 center-xs">
+                        <div class="dev">
 
-        <div class="news-v3 margin-bottom-30">
-            <div class="row">
-                <div class="col-md-2">
-                    <img class="img-responsive full-width" src="~/Content/Upload/img/@Model.ImgUrl" alt="">
+                            @*<span>دراما</span>*@
+
+                        </div>
+                        <div class="rating-line margin-top-xs">
+                            <div class="rating-space">
+                                <span class="margin-top-xs">
+                                    <a data-toggle="modal" href="#dlAppRatingModal">
+                                        <div class="rating">
+                                            <div class="rating-outline">
+                                                <span class="icon-5star_outline"></span>
+                                            </div>
+                                            <div class="rating-fill" style="width:90%">
+                                                <span class="icon-5star"></span>
+                                            </div>
+                                        </div>
+
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div>
+                            <span >
+                                دسته
+                            </span>
+                            <span class="pull-right">
+
+                                <span>@Model.GroupName</span>
+
+                            </span>
+                        </div>
+
+                        <div>
+                            <span>
+                                نصب‌های فعال
+                            </span>
+                            <span class="pull-right">
+                                <span>۵۰۰+</span>
+                            </span>
+                        </div>
+
+                        <div>
+                            <span>
+                                حجم
+                            </span>
+                            <span class="pull-right">
+                                ۵٫۰ مگابایت
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                نسخه
+                            </span>
+                            <span class="pull-right">
+                                1.1.4
+                            </span>
+                        </div>
+                        <div>
+                            <span>
+                                شامد
+                            </span>
+                            <span class="pull-right">
+                                ۱-۲-۶۸۹۷۷۷-۶۳-۰-۱۸۵۹۸۷                               
+                            </span>
+                        </div>
+
+                    </div>
+                   
                 </div>
-                <div class="col-md-4">
-                    <div class="col-md-offset-5">
+            </div>
+            <div class="col-sm-2">
+                <div class="price margin-top-md">
+                    <div>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <a class="btn btn-success btn-u-lg" href="~/Content/Upload/app/@Model.AppUrl"><i class="fa fa-download"></i> دانلود اپ</a>
@@ -44,26 +132,58 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="news-v3-in">
-                <ul class="list-inline posted-info">
-                    <li><a href="#">@Model.GroupName</a></li>
-                    <li>25 اردیبهشت 98</li>
-                </ul>
-                <h2>@Model.AppName</h2>
-                <p>@Model.Description</p>
+                <div class="actions margin-top-md">
 
-                <ul class="post-shares post-shares-lg">
-                    <li>
-                        <a href="#">
-                            <i class="rounded-x icon-speech"></i>
-                            <span>28</span>
-                        </a>
-                    </li>
-
-                </ul>
+                </div>
             </div>
         </div>
+
+        <div class="row margin-top-md">
+            <hr>
+            <div class="col-sm-8">
+                <h2>
+                    توضیح
+                </h2>
+
+                <div class=" rtl ">
+                    <p>
+                        @Model.Description
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>
+                            تغییرات آخرین نسخه
+                        </h3>
+
+                        <div class=" rtl ">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>
+                            دسترسی‌ها
+                        </h3>
+
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        @*mina*@
+
+
+
         <!-- End News v3 -->
 
         <hr>
