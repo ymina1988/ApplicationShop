@@ -50,7 +50,7 @@ namespace ApplicationShop.Areas.Admin.Controllers
         }
 
 
-        public int ChangeStatus(int Id)
+        public int DeleteApp(int Id)
         {
             return _manageAppBLL.ChangeStatus(Id);
         }

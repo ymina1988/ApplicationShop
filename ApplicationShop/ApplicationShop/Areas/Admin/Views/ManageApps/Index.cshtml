@@ -59,7 +59,7 @@
                     { field: "GroupName", title: "گروه", width: "50px" },
                     { field: "Description", title: "توضیحات", width: "250px", encoded: false },
                     
-                    { title: "وضعیت", width: "60px", template: "<a onclick='ChangeStatusBlog(#=Id#)' class='btn btn-danger' href='javascript:void(0);'><i class='fa fa-warning right'></i> حذف</a> <a target='_blank' href='/Admin/ManageApps/EditApps/#=Id#' class='btn btn-info' href='javascript:void(0);'><i class='fa fa-warning right'></i> ویرایش</a>" }
+                    { title: "وضعیت", width: "60px", template: "<a onclick='DeleteApp(#=Id#)' class='btn btn-danger' href='javascript:void(0);'><i class='fa fa-warning right'></i> حذف</a> <a target='_blank' href='/Admin/ManageApps/EditApps/#=Id#' class='btn btn-info' href='javascript:void(0);'><i class='fa fa-warning right'></i> ویرایش</a>" }
                 ],
                 noRecords: {
                     template: "<h1 class='NoRecordFound'><b>موردی یافت نشد...!</b></h1>"
@@ -67,7 +67,7 @@
             });
         });
 
-        function ChangeStatusBlog(Id)
+        function DeleteApp(Id)
         {
             $.confirm({
                     icon: 'fa fa-danger',
@@ -84,7 +84,7 @@
                             btnClass: 'btn-danger',
                             action: function () {
 
-            $.post('@Url.Action("ChangeStatus", "ManageApps", new { Area = "Admin" })', { Id: Id }, function (data)
+            $.post('@Url.Action("DeleteApp", "ManageApps", new { Area = "Admin" })', { Id: Id }, function (data)
             {
                 if (parseInt(data) > 0)
                 {
