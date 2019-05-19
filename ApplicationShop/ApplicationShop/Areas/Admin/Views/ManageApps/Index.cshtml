@@ -57,9 +57,9 @@
                 columns: [
                     { field: "AppName", title: "نام اپ", width: "100px" },
                     { field: "GroupName", title: "گروه", width: "50px" },
-                    { field: "Description", title: "توضیحات", width: "250px" },
+                    { field: "Description", title: "توضیحات", width: "250px", encoded: false },
                     
-                    { title: "وضعیت", width: "60px", template: "<a onclick='ChangeStatusBlog(#=Id#)' class='btn btn-warning' href='javascript:void(0);'><i class='fa fa-warning right'></i> فعال/غیرفعال</a> <a target='_blank' href='/Admin/ManageApps/EditApps/#=Id#' class='btn btn-info' href='javascript:void(0);'><i class='fa fa-warning right'></i> ویرایش</a>" }
+                    { title: "وضعیت", width: "60px", template: "<a onclick='ChangeStatusBlog(#=Id#)' class='btn btn-danger' href='javascript:void(0);'><i class='fa fa-warning right'></i> حذف</a> <a target='_blank' href='/Admin/ManageApps/EditApps/#=Id#' class='btn btn-info' href='javascript:void(0);'><i class='fa fa-warning right'></i> ویرایش</a>" }
                 ],
                 noRecords: {
                     template: "<h1 class='NoRecordFound'><b>موردی یافت نشد...!</b></h1>"
@@ -88,9 +88,9 @@
             {
                 if (parseInt(data) > 0)
                 {
+                    $('#Applist').data('kendoGrid').dataSource.read();
+                    $('#Applist').data('kendoGrid').refresh();
                     PAlert.SuccessAlert('اطلاعات با موفقیت ثبت شد', 3000);
-                    $('#DivReadBlog').data('kendoGrid').dataSource.read();
-                    $('#DivReadBlog').data('kendoGrid').refresh();
                 }
                 else {
                     PAlert.ErrorAlert('خطا در ثبت اطلاعات', 3000);

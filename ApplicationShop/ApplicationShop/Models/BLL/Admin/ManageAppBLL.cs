@@ -7,6 +7,7 @@ using ApplicationShop.Models.ViewModel.Admin;
 using System.IO;
 using ApplicationShop.Models.ViewModel.Main;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace ApplicationShop.Models.BLL.Admin
 {
@@ -189,7 +190,7 @@ namespace ApplicationShop.Models.BLL.Admin
             using (ApplicationShopEntities _Db = new ApplicationShopEntities())
             {
                 var t = _Db.Applications.FirstOrDefault(b => b.Id == Id);
-                t.IsActive = !t.IsActive;
+                _Db.Entry(t).State = EntityState.Deleted;
                 return _Db.SaveChanges() + 1;
             }
         }
