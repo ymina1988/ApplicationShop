@@ -34,7 +34,7 @@ namespace ApplicationShop.Areas.Admin.Controllers
         public ActionResult AddApps(AddAppViewModel model)
         {
             var result = _manageAppBLL.Insert(model);
-            return View();
+            return RedirectToAction("AddApps");
         }
 
         public ActionResult EditApps(int Id)
