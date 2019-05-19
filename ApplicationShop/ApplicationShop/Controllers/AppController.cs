@@ -32,5 +32,12 @@ namespace ApplicationShop.Controllers
             return RedirectToAction("Index", new { id = model.id });
 
         }
+
+        [HttpPost]
+        public JsonResult DownloadApp(int IdApp)
+        {
+            var result = _appBLL.DownloadApp(IdApp);
+            return Json(new { Status = "1" });
+        }
     }
 }

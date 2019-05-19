@@ -1,0 +1,39 @@
+﻿@model List<ApplicationShop.Models.ViewModel.Main.AppDownloadViewModel>
+
+<div class="col-md-12">
+
+    <br />
+    <div class="panel panel-grey margin-bottom-40">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-edit"></i> مدیریت اپ های دانلود شده</h3>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>نام اپ</th>
+                    <th>گروه</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int rowNo = 0; }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(rowNo += 1)</td>
+                        <td>@item.AppName</td>
+                        <td>@item.GroupName</td>
+                        <td><a href="/App?id=@item.Id">توضیحات بیشتر</a></td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        @if (Model == null || Model.Count == 0)
+        {
+            <text><center>موردی یافت نشد</center></text>
+        }
+    </div>
+</div>
+
