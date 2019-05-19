@@ -27,7 +27,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <span class="input-icon icon-right">
-                                    @Html.TextBoxFor(model => model.AppName, new { @class = "form-control", maxlength = "400", placeholder = "موضوع" })
+                                    <label>نام اپ</label>
+                                    @Html.TextBoxFor(model => model.AppName, new { @class = "form-control", maxlength = "400", placeholder = "نام اپ" })
                                     <i class="fa fa-code circular grey"></i>
                                 </span>
                                 @Html.ValidationMessageFor(model => model.AppName)
@@ -37,10 +38,10 @@
                     <br />
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="exampleInputEmail2">متن</label>
+                            <label>توضیحات</label>
                             <div class="form-group">
                                 <span class="input-icon icon-right">
-                                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", maxlength = "500", placeholder = "توضیحات" })
+                                    @Html.TextAreaFor(model => model.Description, new { style = "width:100%;", @class = "form-control", placeholder = "توضیحات" })
                                     <i class="fa fa-user circular grey"></i>
                                 </span>
                                 @Html.ValidationMessageFor(model => model.Description)
@@ -49,16 +50,19 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="exampleInputEmail2">گروه</label>
+                                <label >گروه</label>
                                 @Html.DropDownList("IdGroup", Model.GroupItems, "گروه انتخاب کنید", new { style = "width:100%;", @class = "chosen-select" })
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <span class="input-icon icon-right">
-                                    @Html.TextBoxFor(model => model.Version, new { @class = "form-control", maxlength = "400", placeholder = "شماره نسخه" })
+                                    <label >نسخه برنامه</label>
+                                    @Html.TextBoxFor(model => model.Version, new { style = "width:100%;", @class = "form-control", placeholder = "شماره نسخه" })
                                     <i class="fa fa-code circular grey"></i>
                                 </span>
                                 @Html.ValidationMessageFor(model => model.Version)
@@ -70,7 +74,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleInputEmail2">آپلود عکس</label>
+                                <label >آپلود عکس</label>
                                 <input type="file" name="ImageURL" id="ImageURL" value="" />
                             </div>
                         </div>
