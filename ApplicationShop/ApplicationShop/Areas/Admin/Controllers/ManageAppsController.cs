@@ -26,7 +26,8 @@ namespace ApplicationShop.Areas.Admin.Controllers
 
         public ActionResult AddApps()
         {
-            return View(new AddAppViewModel());
+            var result = _manageAppBLL.LoadManageApp();
+            return View(result);
         }
 
         [HttpPost]
@@ -36,10 +37,18 @@ namespace ApplicationShop.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult EditApps()
+        public ActionResult EditApps(int Id)
         {
+            var result = _manageAppBLL.GetManageAppForEdit(Id);
+            return View(result);
+        }
+        [HttpPost]
+        public ActionResult EditApps(AddAppViewModel model)
+        {
+            var result = _manageAppBLL.Edit(model);
             return View();
         }
+
 
         public int ChangeStatus(int Id)
         {

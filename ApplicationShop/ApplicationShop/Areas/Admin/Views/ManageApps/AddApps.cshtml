@@ -33,11 +33,13 @@
                             </div>
                         </div>
                     </div>
+                    <br />
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
+                            <label for="exampleInputEmail2">متن</label>
                             <div class="form-group">
                                 <span class="input-icon icon-right">
-                                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control", maxlength = "500", placeholder = "توضیحات" })
+                                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", maxlength = "500", placeholder = "توضیحات" })
                                     <i class="fa fa-user circular grey"></i>
                                 </span>
                                 @Html.ValidationMessageFor(model => model.Description)
@@ -46,16 +48,38 @@
                     </div>
 
                     <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">گروه</label>
+                                @Html.DropDownList("IdGroup", Model.GroupItems, "گروه انتخاب کنید", new { style = "width:100%;", @class = "chosen-select" })
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <span class="input-icon icon-right">
+                                    @Html.TextBoxFor(model => model.Version, new { @class = "form-control", maxlength = "400", placeholder = "شماره نسخه" })
+                                    <i class="fa fa-code circular grey"></i>
+                                </span>
+                                @Html.ValidationMessageFor(model => model.Version)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">آپلود عکس</label>
                                 <input type="file" name="ImageURL" id="ImageURL" value="" />
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
+
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="exampleInputEmail2">آپلود فایل</label>
                                 @Html.TextBoxFor(m => m.AppFile, new { type = "file" })
                             </div>
                         </div>
@@ -76,8 +100,10 @@
 </div>
 
 @section scripts {
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/adapters/jquery.js"></script>
     <script type="text/javascript">
-
+        $('#Description').ckeditor();
     </script>
 }
 
