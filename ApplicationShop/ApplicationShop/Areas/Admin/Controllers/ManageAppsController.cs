@@ -46,7 +46,7 @@ namespace ApplicationShop.Areas.Admin.Controllers
         public ActionResult EditApps(AddAppViewModel model)
         {
             var result = _manageAppBLL.Edit(model);
-            return RedirectToAction("EditApps", new { id = model.Id });
+            return RedirectToAction("ManageApps");
         }
 
 
