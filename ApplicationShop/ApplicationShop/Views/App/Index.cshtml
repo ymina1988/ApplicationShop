@@ -19,8 +19,8 @@
     <link href="~/Content/css/custom-main-page.css" rel="stylesheet" />
     <style>
 
-        span{
-            color:black
+        span {
+            color: black
         }
     </style>
 }
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div>
-                            <span >
+                            <span>
                                 دسته
                             </span>
                             <span class="pull-right">
@@ -107,12 +107,12 @@
                                 شامد
                             </span>
                             <span class="pull-right">
-                                ۱-۲-۶۸۹۷۷۷-۶۳-۰-۱۸۵۹۸۷                               
+                                ۱-۲-۶۸۹۷۷۷-۶۳-۰-۱۸۵۹۸۷
                             </span>
                         </div>
 
                     </div>
-                   
+
                 </div>
             </div>
             <div class="col-sm-2">
@@ -120,7 +120,9 @@
                     <div>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <a class="btn btn-success btn-u-lg" href="~/Content/Upload/app/@Model.AppUrl"><i class="fa fa-download"></i> دانلود اپ</a>
+                            <button onclick="DownloadApp(@Model.Id,'@Model.AppUrl')" class="btn btn-success btn-u-lg"><i class="fa fa-download"></i> دانلود اپ</button>
+
+                            @*<a class="btn btn-success btn-u-lg" href="~/Content/Upload/app/@Model.AppUrl"><i class="fa fa-download"></i> دانلود اپ</a>*@
                         }
                         else
                         {
@@ -237,23 +239,28 @@
     <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script src="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 }
-@section JSPageLevel
-{
-    <script src="~/Content/unify/assets/js/plugins/owl-carousel-rtl.js"></script>
-    <script src="~/Content/unify/assets/js/plugins/revolution-slider.js"></script>
-    <script src="~/Content/unify/assets/js/plugins/style-switcher-rtl.js"></script>
-    <script src="~/Content/unify/assets/js/plugins/cube-portfolio/cube-portfolio-lightbox.js"></script>
-}
+
 
 @section Scripts
 {
-    <script src="~/Scripts/Site/ShoppingCart.js"></script>
     <script>
-        jQuery(document).ready(function () {
-            App.initParallaxBg();
-            OwlCarousel.initOwlCarousel();
-            RevolutionSlider.initRSfullWidth();
-            StyleSwitcher.initStyleSwitcher();
-        });
+
+        function DownloadApp(IdApp, AppUrl)
+        {
+          $.ajax({
+               url: '@Url.Action("DownloadApp", "App")',
+               type: 'Post',
+              data: { IdApp: IdApp },
+               success: function (myRes)
+               {
+                   window.location.href = '/Content/Upload/app/' + AppUrl;
+               },
+               error: function ()
+               {
+                   PLoading.Stop(".widget");
+               }
+           });
+   
+        }
     </script>
 }

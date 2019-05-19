@@ -863,6 +863,7 @@
     <Content Include="Areas\User\Views\Shared\MainUser\Menu.cshtml" />
     <Content Include="Areas\User\Views\Shared\MasterPageUser.cshtml" />
     <Content Include="Areas\User\Views\Default\Index.cshtml" />
+    <Content Include="Areas\User\Views\Apps\Index.cshtml" />
     <None Include="Content\beyond\assets\js\jqueryval\jquery.validate-vsdoc.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.js" />
     <Content Include="Content\beyond\assets\js\jqueryval\jquery.validate.min.js" />
@@ -8423,6 +8424,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageAppsController.cs" />
+    <Compile Include="Areas\User\Controllers\AppsController.cs" />
     <Compile Include="Areas\User\Controllers\DefaultController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Classes\Commands.cs" />
