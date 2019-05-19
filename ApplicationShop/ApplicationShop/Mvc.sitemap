@@ -3,10 +3,11 @@
             xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
   <mvcSiteMapNode title="داشبورد" area="Admin" controller="Default" action="Index" imageUrl="glyphicon glyphicon-home" description="صفحه اصلی">
-    <mvcSiteMapNode title="مدیریت اپلیکیشن ها" area="Admin" controller="Order" action="Index" imageUrl="glyphicon glyphicon-home" description="ارتباط با من"></mvcSiteMapNode>
 
 
     <mvcSiteMapNode roles="Admin" title="مدیریت اپلیکیشن ها" area="Admin" controller="Default" action="Dashboard" imageUrl="fa fa-desktop" description="مدیریت اپلیکیشن ها">
+      <mvcSiteMapNode roles="Admin" title=" اپلیکیشن ها" area="Admin" controller="ManageApps" action="index" description=" اپلیکیشن ها"/>
+
       <mvcSiteMapNode roles="Admin" title="افزودن اپلیکیشن" area="Admin" controller="ManageApps" action="AddApps" description="افزودن اپلیکیشن ها"/>
     </mvcSiteMapNode>
 

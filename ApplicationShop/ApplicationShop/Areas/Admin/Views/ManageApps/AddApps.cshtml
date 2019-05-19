@@ -26,7 +26,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <span class="input-icon icon-right">
-                                    @Html.TextBoxFor(model => model.AppName, new { @class = "form-control", maxlength = "400", placeholder = "موضوع" })
+                                    @Html.TextBoxFor(model => model.AppName, new { @class = "form-control", maxlength = "400", placeholder = "نام اپ" })
                                     <i class="fa fa-code circular grey"></i>
                                 </span>
                                 @Html.ValidationMessageFor(model => model.AppName)
@@ -36,7 +36,7 @@
                     <br />
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="exampleInputEmail2">متن</label>
+                            <label for="exampleInputEmail2">توضیحات</label>
                             <div class="form-group">
                                 <span class="input-icon icon-right">
                                     @Html.TextAreaFor(model => model.Description, new { @class = "form-control", maxlength = "500", placeholder = "توضیحات" })
