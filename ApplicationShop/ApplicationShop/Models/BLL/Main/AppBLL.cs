@@ -27,6 +27,39 @@ namespace ApplicationShop.Models.BLL.Main
                 return result;
             }
         }
+
+        public List<AppViewModel> GetAppVistList()
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var result = _Db.Applications.Select(v => new AppViewModel()
+                {
+                    Id = v.Id,
+                    AppName = v.AppName,
+                    AppUrl = v.AppURL,
+                    ImgUrl = v.ImgURL,
+                    GroupName = v.Groups.GroupName,
+                    Description = v.Description
+                }).Take(3).ToList();
+
+                return result;
+            }
+        }
+
+        public List<AppSearchViewModel> SearchApp(string text)
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var result = _Db.Applications.Where(v => v.AppName.Contains(text)).Select(v => new AppSearchViewModel()
+                {
+                    Id = v.Id,
+                    AppName = v.AppName
+                }).Take(3).ToList();
+
+                return result;
+            }
+        }
+
         public AppViewModel GetAppDetail(int id)
         {
             using (ApplicationShopEntities _Db = new ApplicationShopEntities())

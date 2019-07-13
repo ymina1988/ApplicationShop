@@ -17,6 +17,12 @@ namespace ApplicationShop.Models.ViewModel.Main
         public string Description { get; set; }
     }
 
+    public class AppSearchViewModel
+    {
+        public int Id { get; set; }
+        public string AppName { get; set; }
+    }
+
     public class AppDownloadViewModel
     {
         public int Id { get; set; }
