@@ -32,16 +32,9 @@ namespace ApplicationShop.Models.BLL.Main
         {
             using (ApplicationShopEntities _Db = new ApplicationShopEntities())
             {
-                var result = _Db.Applications.Select(v => new AppViewModel()
-                {
-                    Id = v.Id,
-                    AppName = v.AppName,
-                    AppUrl = v.AppURL,
-                    ImgUrl = v.ImgURL,
-                    GroupName = v.Groups.GroupName,
-                    Description = v.Description
-                }).Take(3).ToList();
-
+                var result = _Db.Database.SqlQuery<AppViewModel>(
+                         @"EXEC [applicationshopAdmin].[SP_MostDownloadedApp]"
+                         ).ToList();
                 return result;
             }
         }
