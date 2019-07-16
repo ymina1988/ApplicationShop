@@ -22,5 +22,18 @@ namespace ApplicationShop.Controllers
             var result = _appBLL.GetAppList();
             return PartialView("/Views/Home/partial/_appList.cshtml", result);
         }
+
+        public ActionResult AppVistList()
+        {
+            var result = _appBLL.GetAppVistList();
+            return PartialView("/Views/Home/partial/_appVistList.cshtml", result);
+        }
+        public JsonResult Search(string q)
+        {
+            var result = _appBLL.SearchApp(q);
+            var json = Json(result, JsonRequestBehavior.AllowGet);
+            json.MaxJsonLength = int.MaxValue;
+            return json;
+        }
     }
 }

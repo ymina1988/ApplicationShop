@@ -27,6 +27,32 @@ namespace ApplicationShop.Models.BLL.Main
                 return result;
             }
         }
+
+        public List<AppViewModel> GetAppVistList()
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var result = _Db.Database.SqlQuery<AppViewModel>(
+                         @"EXEC [applicationshopAdmin].[SP_MostDownloadedApp]"
+                         ).ToList();
+                return result;
+            }
+        }
+
+        public List<AppSearchViewModel> SearchApp(string text)
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var result = _Db.Applications.Where(v => v.AppName.Contains(text)).Select(v => new AppSearchViewModel()
+                {
+                    Id = v.Id,
+                    AppName = v.AppName
+                }).Take(3).ToList();
+
+                return result;
+            }
+        }
+
         public AppViewModel GetAppDetail(int id)
         {
             using (ApplicationShopEntities _Db = new ApplicationShopEntities())

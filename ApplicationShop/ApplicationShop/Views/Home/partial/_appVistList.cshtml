@@ -1,0 +1,53 @@
+﻿@model List<ApplicationShop.Models.ViewModel.Main.AppViewModel>
+
+
+<div class="bg-grey">
+    <div class="container content-md">
+        <h2 class="title-v2 title-center">پر بازدیدترین اپ ها</h2>
+        @foreach (var model in from i in Model.Select((value, index) => new { value, index }) group i.value by i.index / 6 into g select g)
+        {
+            <ul class="row list-row margin-bottom-30">
+                @foreach (var item in model)
+                {
+                    <li class="col-md-4 md-margin-bottom-30">
+                        <div class="content-boxes-v3 block-grid-v1 rounded">
+                            <div class="content-boxes-in-v3">
+                                <div class="text-center">
+                                    <img class="img-responsive img-thumbnail" width="200" height="200" src="~/Content/Upload/img/@item.ImgUrl" alt="">
+                                </div>
+                                <h3><a href="/App?id=@item.Id">@item.AppName</a></h3>
+                                @*<ul class="star-vote">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star-half-o"></i></li>
+                                        <li><i class="fa fa-star-o"></i></li>
+                                        <li><i class="fa fa-star-o"></i></li>
+                                    </ul>*@
+                                @*<ul class="list-inline margin-bottom-5">
+                                        <li>By <a class="color-green" href="#">Edward Rooster</a></li>
+                                        <li><i class="fa fa-clock-o"></i> Oct 07, 2014</li>
+                                    </ul>*@
+                                @*<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
+                                    <ul class="list-inline block-grid-v1-add-info">
+                                        <li><a href="#"><i class="fa fa-eye"></i> 34039</a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i> 451</a></li>
+                                        <li><a href="#"><i class="fa fa-download"></i> 10842</a></li>
+                                        <li><a href="#"><i class="fa fa-heart"></i> 863</a></li>
+                                    </ul>*@
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

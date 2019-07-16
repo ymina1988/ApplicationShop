@@ -16,6 +16,48 @@
 @section styles
 {
     <link href="~/Content/css/custom-main-page.css" rel="stylesheet" />
+    <style>
+        .autocomplete-suggestions {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 1px solid #999;
+            background: #FFF;
+            cursor: default;
+            overflow: auto;
+            -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+            -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+            box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+        }
+
+        .autocomplete-suggestion {
+            padding: 2px 5px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .autocomplete-no-suggestion {
+            padding: 2px 5px;
+        }
+
+        .autocomplete-selected {
+            background: #F0F0F0;
+        }
+
+        .autocomplete-suggestions strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .autocomplete-group {
+            padding: 2px 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #000;
+            display: block;
+            border-bottom: 1px solid #000;
+        }
+    </style>
 }
 
 <div class="search-block parallaxBg" style="background-position: 50% 16px;">
@@ -24,7 +66,7 @@
             @*<h1>اپ های <span class="color-green">جدید</span> کنید</h1>*@
 
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="کلمه خود را تایپ کنید ...">
+                <input type="text" id="txtSearch" class="form-control" placeholder="کلمه خود را تایپ کنید ...">
                 <span class="input-group-btn">
                     <button class="btn-u btn-u-lg" type="button"><i class="fa fa-search"></i></button>
                 </span>
@@ -35,176 +77,13 @@
     </div>
 </div>
 
-
 @Html.Action("AppList", "Home")
 
+@Html.Action("AppVistList", "Home")
 
-<div class="bg-grey">
-    <div class="container content-md">
-        <h2 class="title-v2 title-center">پر بازدیدترین اپ ها</h2>
-        <ul class="row list-row margin-bottom-30">
-            <li class="col-md-4 md-margin-bottom-30">
-                <div class="content-boxes-v3 block-grid-v1 rounded">
-                    <img class="pull-left rounded-x block-grid-v1-img" src="assets/img/testimonials/img6.jpg" alt="">
-                    <div class="content-boxes-in-v3">
-                        <h3><a href="#">Forbes 1000</a></h3>
-                        <ul class="star-vote">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-half-o"></i></li>
-                            <li><i class="fa fa-star-o"></i></li>
-                            <li><i class="fa fa-star-o"></i></li>
-                        </ul>
-                        <ul class="list-inline margin-bottom-5">
-                            <li>By <a class="color-green" href="#">Edward Rooster</a></li>
-                            <li><i class="fa fa-clock-o"></i> Oct 07, 2014</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                        <ul class="list-inline block-grid-v1-add-info">
-                            <li><a href="#"><i class="fa fa-eye"></i> 34039</a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i> 451</a></li>
-                            <li><a href="#"><i class="fa fa-download"></i> 10842</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> 863</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-4 md-margin-bottom-30">
-                <div class="content-boxes-v3 block-grid-v1 rounded">
-                    <i class="icon-custom icon-sm rounded-x icon-bg-red fa fa-line-chart"></i>
-                    <div class="content-boxes-in-v3">
-                        <h3><a href="#">Business &amp; Finance</a></h3>
-                        <ul class="star-vote">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-half-o"></i></li>
-                        </ul>
-                        <ul class="list-inline margin-bottom-5">
-                            <li>By <a class="color-green" href="#">The Economist</a></li>
-                            <li><i class="fa fa-clock-o"></i> Oct 02, 2014</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                        <ul class="list-inline block-grid-v1-add-info">
-                            <li><a href="#"><i class="fa fa-eye"></i> 4258</a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i> 382</a></li>
-                            <li><a href="#"><i class="fa fa-download"></i> 2938</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> 230</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-4">
-                <div class="content-boxes-v3 block-grid-v1 rounded">
-                    <img class="rounded-x pull-left block-grid-v1-img" src="assets/img/testimonials/img7.jpg" alt="">
-                    <div class="content-boxes-in-v3">
-                        <h3><a href="#">Web Programming</a></h3>
-                        <ul class="star-vote">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-half-o"></i></li>
-                            <li><i class="fa fa-star-o"></i></li>
-                        </ul>
-                        <ul class="list-inline margin-bottom-5">
-                            <li>By <a class="color-green" href="#">Edward Rooster</a></li>
-                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                        <ul class="list-inline block-grid-v1-add-info">
-                            <li><a href="#"><i class="fa fa-eye"></i> 34039</a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i> 451</a></li>
-                            <li><a href="#"><i class="fa fa-download"></i> 10842</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> 863</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>
 
-        <ul class="row list-row">
-            <li class="col-md-4 md-margin-bottom-30">
-                <div class="content-boxes-v3 block-grid-v1 rounded">
-                    <i class="icon-custom icon-sm rounded-x icon-bg-blue fa fa-twitter"></i>
-                    <div class="content-boxes-in-v3">
-                        <h3><a href="#">Social Network</a></h3>
-                        <ul class="star-vote">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-o"></i></li>
-                        </ul>
-                        <ul class="list-inline margin-bottom-5">
-                            <li>By <a class="color-green" href="#">Twitter Inc.</a></li>
-                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                        <ul class="list-inline block-grid-v1-add-info">
-                            <li><a href="#"><i class="fa fa-eye"></i> 25232</a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i> 543</a></li>
-                            <li><a href="#"><i class="fa fa-download"></i> 6782</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> 943</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-4 md-margin-bottom-30">
-                <div class="content-boxes-v3 block-grid-v1 rounded">
-                    <img class="rounded-x pull-left block-grid-v1-img" src="assets/img/testimonials/img2.jpg" alt="">
-                    <div class="content-boxes-in-v3">
-                        <h3><a href="#">Education/Travel</a></h3>
-                        <ul class="star-vote">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-half-o"></i></li>
-                            <li><i class="fa fa-star-o"></i></li>
-                        </ul>
-                        <ul class="list-inline margin-bottom-5">
-                            <li>By <a class="color-green" href="#">Stanford University</a></li>
-                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                        <ul class="list-inline block-grid-v1-add-info">
-                            <li><a href="#"><i class="fa fa-eye"></i> 7653</a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i> 342</a></li>
-                            <li><a href="#"><i class="fa fa-download"></i> 3621</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> 583</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-4">
-                <div class="content-boxes-v3 block-grid-v1 rounded">
-                    <i class="icon-custom icon-sm rounded-x icon-bg-purple fa fa-music"></i>
-                    <div class="content-boxes-in-v3">
-                        <h3><a href="#">Music/Films</a></h3>
-                        <ul class="star-vote">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-half-o"></i></li>
-                        </ul>
-                        <ul class="list-inline margin-bottom-5">
-                            <li>By <a class="color-green" href="#">Sony Corporation</a></li>
-                            <li><i class="fa fa-clock-o"></i> Jan 02, 2013</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</p>
-                        <ul class="list-inline block-grid-v1-add-info">
-                            <li><a href="#"><i class="fa fa-eye"></i> 5263</a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i> 741</a></li>
-                            <li><a href="#"><i class="fa fa-download"></i> 21314</a></li>
-                            <li><a href="#"><i class="fa fa-heart"></i> 1041</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+
+
 
 
 
@@ -213,6 +92,7 @@
     <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
     <script src="~/Content/unify/assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script src="~/Content/unify/assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="~/Scripts/jQueryAutocomplete/jquery.autocomplete.min.js"></script>
 }
 @section JSPageLevel
 {
@@ -224,7 +104,6 @@
 
 @section Scripts
 {
-    <script src="~/Scripts/Site/ShoppingCart.js"></script>
     <script>
         jQuery(document).ready(function () {
             App.initParallaxBg();
@@ -232,5 +111,33 @@
             RevolutionSlider.initRSfullWidth();
             StyleSwitcher.initStyleSwitcher();
         });
+
+
+        $(document).ready(function () {
+            $('#txtSearch').autocomplete({
+                minChars: 3,
+                serviceUrl: '/Home/search',
+                paramName: 'q',
+                dataType: 'json',
+                transformResult: function (response) {
+                    return {
+                        suggestions: $.map(response, function (dataItem) {
+                            return { value: dataItem.AppName, data: { Id: dataItem.Id } };
+                        })
+                    };
+                },
+                onSelect: function (suggestion) {
+                    var url = '';
+                    url = `/App/index?id=${suggestion.data.Id}`
+                    window.open(
+                        url,
+                        '_blank'
+                    );
+                }
+            });
+        });
+
     </script>
+
+   
 }
