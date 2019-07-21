@@ -14,6 +14,19 @@ namespace ApplicationShop.Models.BLL.Main
         {
             using (ApplicationShopEntities _Db = new ApplicationShopEntities())
             {
+
+
+                string P = Password;
+                var t = _Db.Users.FirstOrDefault(b => b.Email.ToLower().Trim() == Email.ToLower().Trim()
+                && b.Password == P && b.IsActive == true);// && b.UserToRoll.);
+                if (t == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return t.Id;
+                }
                 return 0;
             }
         }

@@ -28,6 +28,13 @@ namespace ApplicationShop.Controllers
             var result = _appBLL.GetAppVistList();
             return PartialView("/Views/Home/partial/_appVistList.cshtml", result);
         }
+   public ActionResult AppLowSize()
+        {
+            var result = _appBLL.GetAppLowSize();
+            return PartialView("/Views/Home/partial/_appLowSize.cshtml", result);
+        }
+
+
         public JsonResult Search(string q)
         {
             var result = _appBLL.SearchApp(q);

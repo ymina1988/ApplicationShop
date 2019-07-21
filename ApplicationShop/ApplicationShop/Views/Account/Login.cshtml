@@ -30,24 +30,8 @@
 <div class="container content-xs">
     <div class="log-reg-v3 content-md">
         <div class="row">
-            <div class="col-md-7 md-margin-bottom-50">
-                <h2 class="welcome-title">به سایت دنلود اپلیکیشن موبایل ملحق شوید!</h2>
-                <p>مشتریان میتوانند نسبت به پیگیری سفارشات خود اقدام نمایند.!</p><br>
-
-                <div class="members-number">
-                    <h3>پیوستن <span class="shop-green"> هزاران </span> عضو از سراسر کشور</h3>
-                    <img class="img-responsive" src="~/Content/Images/map.png" alt="" />
-                </div>
-                <div class="info-block-v2">
-                    <i class="icon icon-settings"></i>
-                    <div class="info-block-in">
-                        <h3>دسترسی آسان به حساب کاربری</h3>
-                       
-                    </div>
-                </div>
-               
-            </div>
-            <div class="col-md-5">
+            <div class="col-md-4"> </div>
+            <div class="col-md-4">
                 @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "sky-form log-reg-block bg-grey", id = "LoginId", enctype = "multipart/form-data" }))
                 {
                     <h2>ورود حساب کاربری !</h2>
@@ -89,8 +73,10 @@
                     </div>
                 }
                 <div class="margin-bottom-20"></div>
-                <p class="text-center">شما قبلا ثبت نام کردیده اید؟ <a href="/Login">ورود به حساب کاربری!</a></p>
+                @*<p class="text-center">شما قبلا ثبت نام کردیده اید؟ <a href="Account/Login">ورود به حساب کاربری!</a></p>*@
             </div>
+
+            <div class="col-md-4"> </div>
         </div>
     </div>
 </div>

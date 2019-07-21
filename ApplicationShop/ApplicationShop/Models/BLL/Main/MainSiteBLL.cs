@@ -42,7 +42,7 @@ namespace ApplicationShop.Models.BLL.Main
             {
                 using (var Db = new ApplicationShopEntities())
                 {
-                    if (Db.UserToRoll.AsNoTracking().FirstOrDefault(b => b.IdUser == Id && b.IdRoll == 2) != null)
+                    if (Db.UserToRoll.AsNoTracking().FirstOrDefault(b => b.IdUser == Id ) != null)
                     {
                         return true;
                     }

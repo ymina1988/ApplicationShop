@@ -31,33 +31,8 @@
 <div class="container content-xs">
     <div class="log-reg-v3 content-md">
         <div class="row">
-            <div class="col-md-7 md-margin-bottom-50">
-                <h2 class="welcome-title">به سایت فروشگاه اپلیکیشن ملحق شوید!</h2>
-
-                <div class="members-number">
-                    <h3>پیوستن <span class="shop-green"> هزاران </span> عضو از سراسر کشور</h3>
-                    <img class="img-responsive" src="~/assets/img/map.png" alt="" />
-                </div>
-                <div class="info-block-v2">
-                    <i class="icon icon-settings"></i>
-                    <div class="info-block-in">
-                        <h3>دسترسی آسان به حساب کاربری</h3>
-                        <p>میزکاری شما و فعالیت های  خود را مدیریت کنید و لذت ببرید!</p>
-                    </div>
-                </div>
-                <div class="info-block-v2 info-block-offset-left-20">
-                    <i class="icon icon-earphones-alt"></i>
-                    <div class="info-block-in">
-                        <h3>
-                            برای ایجاد حساب کاربریتان به راهنمایی نیاز دارید؟
-                        </h3>
-                        <p>
-                            با پشتیبان 24 ساعته ما در ارتباط باشید و سوال یا مشکل خود را مطرح نمایید تا شما را یاری کنیم.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "sky-form log-reg-block bg-grey", id = "RegisterId", enctype = "multipart/form-data" }))
                 {
                     <h2>ایجاد حساب کاربری!</h2>
@@ -65,14 +40,14 @@
                     @Html.ValidationSummary(true)
 
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <label class="input">
                                 <i class="icon-append fa fa-user"></i>
                                 @Html.TextBoxFor(model => model.Name, new { placeholder = "نام" })
                                 @Html.ValidationMessageFor(model => model.Name)
                             </label>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <section>
                                 <label class="input">
                                     <i class="icon-append fa fa-user"></i>
@@ -109,8 +84,9 @@
                 <div class="margin-bottom-20"></div>
                 <p class="text-center">شما قبلا ثبت نام کردیده اید؟ <a href="/Account/Login">ورود به حساب کاربری!</a></p>
             </div>
+            <div class="col-md-4"></div>
         </div>
-    </div>
+        </div>
 </div>
 
 

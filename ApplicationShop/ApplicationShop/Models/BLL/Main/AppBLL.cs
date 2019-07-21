@@ -39,6 +39,17 @@ namespace ApplicationShop.Models.BLL.Main
             }
         }
 
+        public List<AppViewModel> GetAppLowSize()
+        {
+            using (ApplicationShopEntities _Db = new ApplicationShopEntities())
+            {
+                var result = _Db.Database.SqlQuery<AppViewModel>(
+                         @"EXEC [applicationshopAdmin].[SP_lowSizeApp]"
+                         ).ToList();
+                return result;
+            }
+        }
+
         public List<AppSearchViewModel> SearchApp(string text)
         {
             using (ApplicationShopEntities _Db = new ApplicationShopEntities())

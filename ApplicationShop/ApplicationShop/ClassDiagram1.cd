@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ApplicationShop.BundleConfig" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.FilterConfig" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.RouteConfig" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.MvcApplication" Collapsed="true">
+    <Position X="2" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Areas.Admin.AdminAreaRegistration" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\AdminAreaRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Areas.Admin.Controllers.DefaultController" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Controllers\DefaultController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Areas.Admin.Controllers.ManageAppsController" Collapsed="true">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAQAAAAAAAgAAAAAIAAAAAAEAAAAIAAA=</HashCode>
+      <FileName>Areas\Admin\Controllers\ManageAppsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Areas.User.Controllers.AppsController" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAA=</HashCode>
+      <FileName>Areas\User\Controllers\AppsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Areas.User.Controllers.DefaultController" Collapsed="true">
+    <Position X="2" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Areas\User\Controllers\DefaultController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Areas.User.UserAreaRegistration" Collapsed="true">
+    <Position X="9" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\User\UserAreaRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Classes.Commands" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Commands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Classes.MyProvider" Collapsed="true">
+    <Position X="5.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEEAAwAAAEAAAAAAAABAAAAAAAAAIAAAgEAAEQAAA=</HashCode>
+      <FileName>Classes\Identity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Classes.PartialToStringClass" Collapsed="true">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\PartialToStringClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Classes.Replace" Collapsed="true">
+    <Position X="2" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Classes\Replace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Convertor.DateTimeConvertor" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Convertor\DateTimeConvertor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.ImageResizer" Collapsed="true">
+    <Position X="2" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAQAAAAAEAAAA=</HashCode>
+      <FileName>Classes\Convertor\ImageResizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.PersianCulture" Collapsed="true">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAQA=</HashCode>
+      <FileName>Classes\Convertor\PersianCulture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.CheckContentImage" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Security\CheckContentImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.PasswordHelper" Collapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAABAQAAAAQAAgAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Classes\Security\PasswordHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Persia.Calendar" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEBAAABAAAAAEAACAAAEBgAEgAAAAAAEAAQA=</HashCode>
+      <FileName>Classes\DateTime\DateTimeConvertor\Calendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Persia.LunarDate" Collapsed="true">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAAAAAAAAAGAAAAAAAAAAAABAAAEAAEAQAAAAA=</HashCode>
+      <FileName>Classes\DateTime\DateTimeConvertor\LunarDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Persia.PersianWord" Collapsed="true">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Classes\DateTime\DateTimeConvertor\PersianWord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Persia.SolarDate" Collapsed="true">
+    <Position X="7.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAIAAAAAAAAEAAAEAAAABAAAAAAAUAIEAAAAABA=</HashCode>
+      <FileName>Classes\DateTime\DateTimeConvertor\SolarDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.DateTime.iDataStrings" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAQIMAhYAADBAEhQkABAgGRAoAgJCgAgIAEAAg2QAcU=</HashCode>
+      <FileName>Classes\DateTime\iDataStrings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.DateTime.iDate" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>sRRAKoFAYlnIBCgAQQBAQAQAQAAQQQQBAAAEAABADAU=</HashCode>
+      <FileName>Classes\DateTime\iDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Image.CheckContentImage" Collapsed="true">
+    <Position X="2" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAQAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Image\CheckContentImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.IO.FileManagment" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEGCAAIQQQAAAAACCAAAAIAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Classes\IO\FileManagment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.MyProvider" Collapsed="true">
+    <Position X="3.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEEAAwAAAEAAAAAAAABAAAAAAAAAIAAAAEAAEQAAA=</HashCode>
+      <FileName>Classes\MyProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Controllers.AccountController" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAABAIAEAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Controllers.AppController" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAEAEAABAAA=</HashCode>
+      <FileName>Controllers\AppController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Controllers.As_AdminController" Collapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEQAAAAAAA=</HashCode>
+      <FileName>Controllers\As_AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Controllers.HomeController" Collapsed="true">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAEAAAAAgAAAAAAAAAEAEAAgAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.BLL.Admin.ManageAppBLL" Collapsed="true">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAkAAAAAAAQAAAAAAAAAAAAQAAAACAAAAAAACAAA=</HashCode>
+      <FileName>Models\BLL\Admin\ManageAppBLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.BLL.Main.AccountBLL" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAABAAIAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\BLL\Main\AccountBLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.BLL.Main.AppBLL" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAASAAAAAAAAAAABAAAAAAAAAAAABDAAA=</HashCode>
+      <FileName>Models\BLL\Main\AppBLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.BLL.Main.CommentBLL" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BLL\Main\CommentBLL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.BLL.Main.MainSiteBLL" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BLL\Main\MainSiteBLL.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.ApplicationShopEntities" Collapsed="true">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAABAAAAAEAAAAAAABEAAAAAAAAAEAAAAAICA=</HashCode>
+      <FileName>Models\DataBase\ApplicationShopModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.Applications" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICACAGAACAAgkAAEEAAAAAAAEAAAAAAAAAEAAAAAIAA=</HashCode>
+      <FileName>Models\DataBase\Applications.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.BookMarks" Collapsed="true">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAACBAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataBase\BookMarks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.Comments" Collapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABDAAAIIAEAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataBase\Comments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.Downloads" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAACBAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataBase\Downloads.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.Groups" Collapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\DataBase\Groups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.Rolls" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Models\DataBase\Rolls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.Users" Collapsed="true">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAADAAAAAEEAAAAAQAAEAAAAACAQEAAAAAJCA=</HashCode>
+      <FileName>Models\DataBase\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.DataBase.UserToRoll" Collapsed="true">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAACAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataBase\UserToRoll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Admin.ManageAppViewModel" Collapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModel\Admin\ManageAppViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Admin.AddAppViewModel" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAKAAAAAAAgEAAEBAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModel\Admin\ManageAppViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.RegisterVM" Collapsed="true">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAACCAAAAAAAABAA=</HashCode>
+      <FileName>Models\ViewModel\Main\AccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.LoginVM" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModel\Main\AccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.AppViewModel" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADACAAAAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\ViewModel\Main\AppVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.AppSearchViewModel" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModel\Main\AppVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.AppDownloadViewModel" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADACAAAAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\ViewModel\Main\AppVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.CommentViewModel" Collapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAAAAiA=</HashCode>
+      <FileName>Models\ViewModel\Main\CommentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationShop.Models.ViewModel.Main.MainSiteHomeLoginVM" Collapsed="true">
+    <Position X="9" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAKAAAAAAAAAIAAAAAACAAQABAAAIAAA=</HashCode>
+      <FileName>Models\ViewModel\Main\MainSite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ApplicationShop.Models.BLL.Main.IMainSite" Collapsed="true">
+    <Position X="2" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BLL\Main\MainSiteBLL.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Persia.DateType" Collapsed="true">
+    <Position X="2" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\DateTime\DateTimeConvertor\DateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
